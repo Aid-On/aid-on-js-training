@@ -1,0 +1,67 @@
+{
+  // エディタの基本設定
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80],
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // JavaScript固有の設定
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.autoImports": true,
+  "javascript.format.enable": false, // Prettierを使用するため無効化
+
+  // TypeScript/JavaScript言語設定
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // ESLint設定
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "eslint.format.enable": true,
+
+  // Prettier設定
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 80,
+  "prettier.semi": true,
+
+  // ファイル設定
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+
+  // 検索設定
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+
+  // GitLens設定（オプション）
+  "gitlens.codeLens.enabled": false,
+
+  // Jest設定
+  "jest.autoRun": {
+    "watch": true,
+    "onSave": "test-src-file"
+  },
+
+  // エディタの表示設定
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.enabled": true,
+
+  // 拡張機能の推奨設定
+  "extensions.ignoreRecommendations": false,
+
+  // ターミナル設定
+  "terminal.integrated.defaultProfile.windows": "Git Bash", // Windowsの場合
+  "terminal.integrated.defaultProfile.linux": "bash", // Linuxの場合
+  "terminal.integrated.defaultProfile.osx": "zsh" // macOSの場合
+}
