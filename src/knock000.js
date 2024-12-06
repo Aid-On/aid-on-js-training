@@ -8,28 +8,6 @@
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  // throw new TrainingSkipError();
-  return 'Hello, World!\n';
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-const うさぎ = (色) => {
-  if (色 === 'オレンジ') {
-    // もし、色がオレンジなのであれば ピノ を返す
-    return 'ピノ';
-  } else if (色 === 'グレー') {
-    // もし、色がグレーなのであれば ウィム を返す
-    return 'ウィム';
-  } else {
-    return undefined; // JavaScriptにおける何も無いって表現
-  }
-};
-
-const 関数名 = (インプット1) => {
-  const インプットを受けた結果 = インプット1; // これは例なのでそのまま渡す、普通は加工される
-  return インプットを受けた結果;
-};
-
-console.log(うさぎ('オレンジ'));
-console.log(うさぎ('グレー'));
-console.log(うさぎ('グリーン'));

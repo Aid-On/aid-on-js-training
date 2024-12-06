@@ -5,7 +5,6 @@ import { TrainingSkipError } from './common/TrainingSkipError.js';
  */
 export const knock = (a, b) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  return a + b;
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
