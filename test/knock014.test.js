@@ -1,112 +1,31 @@
 import { knock } from '../src/knock014.js';
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 
-// モック関数を使って標準入力をシミュレート
-const mockStdin = (value) => {
-  const originalStdin = process.stdin;
-  process.stdin = {
-    ...process.stdin,
-    on: jest.fn((event, callback) => {
-      if (event === 'data') {
-        callback(Buffer.from(value + '\n'));
-      }
-    }),
-  };
-  return () => {
-    process.stdin = originalStdin;
-  };
-};
-
-// モック関数を使って標準出力をキャプチャ
-const mockConsoleLog = () => {
-  const originalLog = console.log;
-  const logs = [];
-  console.log = jest.fn((...args) => {
-    logs.push(args.join(' '));
-  });
-  return {
-    getLogs: () => logs.join('\n') + '\n',
-    restore: () => {
-      console.log = originalLog;
-    },
-  };
-};
-
-describe('knock014', () => {
-  let consoleOutput;
-
-  beforeEach(() => {
-    consoleOutput = mockConsoleLog();
+// No. 14 カウントダウン のテスト
+describe('No. 14 カウントダウン', () => {
+  test('デフォルト引数 (5)', () => {
+    const result = knock();
+    const lines = result.split('\n').filter((line) => line !== '');
+    // 先頭行は "input number: 5"
+    expect(lines[0]).toBe('input number: 5');
+    // 5 から 0 まで
+    const numbers = lines.slice(1).map((line) => Number(line));
+    expect(numbers.length).toBe(6);
+    expect(numbers).toEqual([5, 4, 3, 2, 1, 0]);
   });
 
-  afterEach(() => {
-    consoleOutput.restore();
+  test('任意の整数 (3)', () => {
+    const result = knock(3);
+    const lines = result.split('\n').filter((line) => line !== '');
+    expect(lines[0]).toBe('input number: 3');
+    const numbers = lines.slice(1).map((line) => Number(line));
+    expect(numbers).toEqual([3, 2, 1, 0]);
   });
 
-  test('5を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('5');
-      knock();
-      cleanupStdin();
-      const expected = '5\n4\n3\n2\n1\n0\n';
-      expect(consoleOutput.getLogs()).toBe(expected);
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('0を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('0');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('0\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('1を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('1');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('1\n0\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('10を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('10');
-      knock();
-      cleanupStdin();
-      const expected =
-        Array.from({ length: 11 }, (_, i) => 10 - i).join('\n') + '\n';
-      expect(consoleOutput.getLogs()).toBe(expected);
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('数値が順番通りに減少することを確認', () => {
-    try {
-      const inputValue = 7;
-      const cleanupStdin = mockStdin(inputValue.toString());
-      knock();
-      cleanupStdin();
-      const lines = consoleOutput.getLogs().trim().split('\n');
-      lines.forEach((line, index) => {
-        expect(parseInt(line)).toBe(inputValue - index);
-      });
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
+  test('任意の整数 (10)', () => {
+    const result = knock(10);
+    const lines = result.split('\n').filter((line) => line !== '');
+    expect(lines[0]).toBe('input number: 10');
+    const numbers = lines.slice(1).map((line) => Number(line));
+    expect(numbers).toEqual([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
   });
 });

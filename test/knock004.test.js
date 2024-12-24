@@ -1,93 +1,17 @@
 import { knock } from '../src/knock004.js';
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 
-// モック関数を使って標準入力をシミュレート
-const mockStdin = (value) => {
-  const originalStdin = process.stdin;
-  process.stdin = {
-    ...process.stdin,
-    on: jest.fn((event, callback) => {
-      if (event === 'data') {
-        callback(Buffer.from(value + '\n'));
-      }
-    }),
-  };
-  return () => {
-    process.stdin = originalStdin;
-  };
-};
-
-// モック関数を使って標準出力をキャプチャ
-const mockConsoleLog = () => {
-  const originalLog = console.log;
-  const logs = [];
-  console.log = jest.fn((...args) => {
-    logs.push(args.join(' '));
+// No. 04 入力と計算 のテスト
+describe('No. 04 入力と計算', () => {
+  test('デフォルト引数での入力', () => {
+    expect(knock()).toBe('input number: 123\nanswer = 369');
   });
-  return {
-    getLogs: () => logs.join('\n') + '\n',
-    restore: () => {
-      console.log = originalLog;
-    },
-  };
-};
-
-describe('knock004', () => {
-  let consoleOutput;
-
-  beforeEach(() => {
-    consoleOutput = mockConsoleLog();
+  test('任意の整数 1', () => {
+    expect(knock(1)).toBe('input number: 1\nanswer = 3');
   });
-
-  afterEach(() => {
-    consoleOutput.restore();
+  test('任意の整数 10', () => {
+    expect(knock(10)).toBe('input number: 10\nanswer = 30');
   });
-
-  test('正の整数を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('5');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('15\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('0を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('0');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('0\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('負の整数を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('-4');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('-12\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('大きな整数を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('1000');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('3000\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
+  test('任意の整数 99', () => {
+    expect(knock(99)).toBe('input number: 99\nanswer = 297');
   });
 });

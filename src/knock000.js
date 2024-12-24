@@ -1,3 +1,4 @@
+import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 /**
  * No. 00 ごあいさつ
  * 実行するとHello World!と表示するプログラムを作成せよ。

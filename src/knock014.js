@@ -1,10 +1,27 @@
-import { TrainingSkipError } from './common/TrainingSkipError.js';
+import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 
-/**
- * 整数値を入力させ、入力値から0まで数を1ずつ減らして表示するプログラムを作成せよ。
- */
-export const knock = () => {
+// No. 14 カウントダウン
+// 整数値を入力させ、入力値から 0 まで数を 1 ずつ減らして表示するプログラムを作成せよ。
+// 実行例:
+//   $ ./knock14
+//   input number: 5
+//   5
+//   4
+//   3
+//   2
+//   1
+//   0
+//
+// [Tips]
+// - カウントダウンには for 文や while 文を利用
+//   for (let i = num; i >= 0; i--) { ... }
+//
+// @param {number} num
+// @returns {string} "input number: num\n(numから0までの数字を1つずつ改行)"
+export const knock = (num = 5) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
+
   throw new TrainingSkipError();
+
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

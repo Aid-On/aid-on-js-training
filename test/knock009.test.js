@@ -1,105 +1,20 @@
 import { knock } from '../src/knock009.js';
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 
-// モック関数を使って標準入力をシミュレート
-const mockStdin = (value) => {
-  const originalStdin = process.stdin;
-  process.stdin = {
-    ...process.stdin,
-    on: jest.fn((event, callback) => {
-      if (event === 'data') {
-        callback(Buffer.from(value + '\n'));
-      }
-    }),
-  };
-  return () => {
-    process.stdin = originalStdin;
-  };
-};
-
-// モック関数を使って標準出力をキャプチャ
-const mockConsoleLog = () => {
-  const originalLog = console.log;
-  const logs = [];
-  console.log = jest.fn((...args) => {
-    logs.push(args.join(' '));
+// No. 09 正? 負? 0? のテスト
+describe('No. 09 正? 負? 0?', () => {
+  test('デフォルト引数での入力(1)', () => {
+    // input number: 1\npositive
+    expect(knock()).toBe('input number: 1\npositive');
   });
-  return {
-    getLogs: () => logs.join('\n') + '\n',
-    restore: () => {
-      console.log = originalLog;
-    },
-  };
-};
-
-describe('knock009', () => {
-  let consoleOutput;
-
-  beforeEach(() => {
-    consoleOutput = mockConsoleLog();
+  test('入力が1のとき (正)', () => {
+    expect(knock(1)).toBe('input number: 1\npositive');
   });
-
-  afterEach(() => {
-    consoleOutput.restore();
+  test('入力が-1のとき (負)', () => {
+    // input number: -1\nnegative
+    expect(knock(-1)).toBe('input number: -1\nnegative');
   });
-
-  test('正の値を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('5');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('positive\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('0を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('0');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('zero\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('負の値を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('-3');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('negative\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('大きな正の値を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('1000');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('positive\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
-  });
-
-  test('大きな負の値を入力した場合', () => {
-    try {
-      const cleanupStdin = mockStdin('-1000');
-      knock();
-      cleanupStdin();
-      expect(consoleOutput.getLogs()).toBe('negative\n');
-    } catch (e) {
-      if (e instanceof TrainingSkipError) return;
-      throw e;
-    }
+  test('入力が0のとき (0はzero)', () => {
+    // input number: 0\nzero
+    expect(knock(0)).toBe('input number: 0\nzero');
   });
 });

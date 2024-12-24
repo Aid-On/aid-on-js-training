@@ -5,7 +5,7 @@ global.describe = (name, fn) => {
       fn();
     } catch (e) {
       if (e.name === 'TrainingSkipError') {
-        it.skip('未実装のためスキップ', () => {});
+        test.todo('未実装のためスキップ', () => {});
         return;
       }
       throw e;
