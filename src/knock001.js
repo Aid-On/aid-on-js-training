@@ -16,7 +16,7 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 export const knock = (a = 12345, b = 23456) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  throw new TrainingSkipError();
+  return a + b;
 
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
