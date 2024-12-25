@@ -14,8 +14,21 @@
 // }
 //   console.log(count)
 
-var count = 0
-for(var x = 0; x <= 20; x++) {
-  count += x
+//var count = 0
+//for(var x = 0; x <= 20; x++) {
+////  count += x
+//}
+//console.log(count)
+
+for (var x = 0; x < 10; x++) {
+  count += 1;
+  console.log(x);
 }
-console.log(count)
+var t = '';
+var count = 0;
+for (var x = 0; x < 10; x++) {
+  count += x;
+  t += 'Hello World!';
+}
+
+console.log(t);

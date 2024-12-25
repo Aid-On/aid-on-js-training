@@ -26,14 +26,30 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 // @returns {string}
 //  "input 1st number: a\n
 //   input 2nd number: b\n
-//   和: sum\n
-//   差: difference\n
-//   積: product\n
-//   商: quotient, 余り: remainder"
+//   和: 🥸\n
+//   差: 🥸\n
+//   積: 🥸\n
+//   商: 🥸, 余り: 🥸"
 export const knock = (a = 123, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  throw new TrainingSkipError();
+  // return `input 1st number:${a}\n${a + b}\n${a - b}\n${a * b}\n${Math.floor(
+  //   a / b
+  // )}${a % b}`;
+  return `input 1st number: ${a}\ninput 2nd number: ${b}\n和: ${a + b}\n差: ${
+    a - b
+  }\n積: ${a * b}\n商: ${Math.floor(a / b)}, 余り: ${a % b}`;
 
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// 🥸ってかいたところは変数とか計算結果が入るよ
+// input 1st numberとかも忘れないであげてね🥲
+/*
+input 1st number: 🥸\n
+input 2nd number: 🥸\n
+和: 🥸\n
+差: 🥸\n
+積: 🥸\n
+商: 🥸, 余り: 🥸"
+*/

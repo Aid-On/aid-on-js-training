@@ -20,7 +20,11 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  throw new TrainingSkipError();
-
+  return `input number: ${num}\nabsolute value is ${absoluteNumber(num)}`;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+function absoluteNumber(a) {
+  const num = Math.abs(a);
+  return num;
+}

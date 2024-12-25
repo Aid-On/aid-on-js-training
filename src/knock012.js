@@ -18,7 +18,12 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 export const knock = (num = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  throw new TrainingSkipError();
-
+  var t = `input number: ${num}\n`;
+  var count = 0;
+  for (var x = 0; x < num; x++) {
+    count += x;
+    t += 'Hello World!\n';
+  }
+  return t;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
