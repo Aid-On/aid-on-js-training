@@ -24,6 +24,12 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "input number: num" (num が 0 または負 のとき)
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  const text = `input number: ${num}\npositive`;
+  const text1 = `input number: ${num}`;
+  if (num > 0) {
+    return text;
+  }
+  return text1;
+
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

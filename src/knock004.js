@@ -17,7 +17,9 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 export const knock = (num = 123) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  throw new TrainingSkipError();
+  const count = num * 3; // num: 123 , count: 369
+  const text = `input number: ${num}\nanswer = ${count}`;
+  return text;
 
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

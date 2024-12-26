@@ -32,6 +32,12 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   商: 🥸, 余り: 🥸"
 export const knock = (a = 123, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+
+  return `input 1st number: ${a}
+input 2nd number: ${b}
+和: ${a + b}
+差: ${a - b}
+積: ${a * b}
+商: ${Math.floor(a / b)}, 余り: ${a % b}`;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

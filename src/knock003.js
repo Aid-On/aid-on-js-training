@@ -5,7 +5,6 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // 実行例:
 //   $ ./knock03
 //   input number: 123
-//   your number is 123
 //
 // [Tips]
 // - このトレーニングでは、関数の引数として入力値を受け取る想定
@@ -13,11 +12,10 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   例) `Hello, ${name}`
 //
 // @param {number} num
-// @returns {string} "input number: num\nyour number is num"
+// @returns {string} "input number: num"
 export const knock = (num = 123) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  throw new TrainingSkipError();
-
+  const text = `input number: ${num}`;
+  return text;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

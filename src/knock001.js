@@ -12,11 +12,9 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //
 // @param {number} a
 // @param {number} b
-// @returns {string} "a + b = sum"
+// @returns {number} a + b
 export const knock = (a = 12345, b = 23456) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  throw new TrainingSkipError();
-
+  return a + b;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
