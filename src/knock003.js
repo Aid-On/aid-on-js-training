@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 03 入力
 // 整数値を入力させ、その入力値を表示するプログラムを作成せよ。
@@ -17,7 +17,7 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 export const knock = (num = 123) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  return `input number: ${num}\nyour number is ${num}`;
+  throw new TrainingSkipError();
 
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 10 絶対値
 // 整数値を入力させ、その値を絶対値にして表示するプログラムを作成せよ。
@@ -19,12 +19,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 // @returns {string} "input number: num\nabsolute value is absValue"
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  return `input number: ${num}\nabsolute value is ${absoluteNumber(num)}`;
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-function absoluteNumber(a) {
-  const num = Math.abs(a);
-  return num;
-}

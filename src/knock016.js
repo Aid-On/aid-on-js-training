@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 16 0でおしまい
 // 整数値を入力させ、入力値が0でなければ再度入力させ、0であれば終了するプログラムを作成せよ。
@@ -18,8 +18,20 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 // @returns {string} "input number: x\n..." が 0 に出会うまで繰り返される
 export const knock = (inputs = [5, 3, -4, 0]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
   throw new TrainingSkipError();
-
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// 通行人 < 1, 2, 3, 0 (今回は 1, 2, 3, 0
+// 通行人 < 2, 0
+
+console.log(knock([1, 2, 3, 0]));
+// console.log(knock([4, 8, 7, 2, 0]));
+
+// node src/knock016.js
+
+// [4, 5, 7, 0]
+// input number: 5
+// input number: 7
+// input number: 0
+// input number: undefined

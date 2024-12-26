@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 09 正? 負? 0?
 // 整数値を入力させ、
@@ -27,14 +27,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   "input number: num\nzero"       (num === 0)
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  if (num > 0) {
-    return `input number: ${num}\npositive`;
-  } else if (num < 0) {
-    return `input number: ${num}\nnegative`;
-  } else if (num === 0) {
-    return `input number: ${num}\nzero`;
-  }
-
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

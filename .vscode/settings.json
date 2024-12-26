@@ -25,7 +25,7 @@
   "eslint.format.enable": true,
 
   // Prettier設定
-  "prettier.singleQuote": true,
+  "prettier.singleQuote": false,
   "prettier.trailingComma": "es5",
   "prettier.printWidth": 80,
   "prettier.semi": true,

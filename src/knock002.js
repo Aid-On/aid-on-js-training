@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 02 余り
 // 12345 を 7 で割った結果（剰余）を返すプログラムを作成せよ。
@@ -15,7 +15,7 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 export const knock = (a = 12345, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
 
-  return a % b;
+  throw new TrainingSkipError();
 
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 15 2ずつカウントアップ
 // 整数値を入力させ、0から入力値を超えない範囲まで2ずつ増やして表示するプログラムを作成せよ。
@@ -19,8 +19,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   "input number: num\n" + "0\n2\n4...\n" (0からnumを超えない範囲で2ずつ)
 export const knock = (num = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
   throw new TrainingSkipError();
-
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 07 0 or not 0
 // 整数値を入力させ、値が0なら "zero"、0でなければ "not zero" と表示するプログラムを作成せよ。
@@ -20,11 +20,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   "input number: num\nnot zero" (num が 0 以外のとき)
 export const knock = (num = 0) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  if (num === 0) {
-    return `input number: ${num}\nzero`;
-  } else {
-    return `input number: ${num}\nnot zero`;
-  }
-
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 /**
  * No. 00 ごあいさつ
  * 実行するとHello World!と表示するプログラムを作成せよ。
@@ -9,6 +9,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return 'Hello, World!';
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

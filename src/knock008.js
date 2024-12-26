@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 08 正の整数?
 // 整数値を入力させ、値が正であれば "positive" と表示するプログラムを作成せよ。
@@ -24,12 +24,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   "input number: num" (num が 0 または負 のとき)
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  if (num > 0) {
-    return `input number: ${num}\npositive`;
-  } else {
-    return `input number: ${num}`;
-  }
-
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

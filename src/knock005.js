@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 05 入力と四則演算
 // 整数値を2つ入力させ、それらの値の和、差、積、商と余りを求めるプログラムを作成せよ。
@@ -32,24 +32,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   商: 🥸, 余り: 🥸"
 export const knock = (a = 123, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  // return `input 1st number:${a}\n${a + b}\n${a - b}\n${a * b}\n${Math.floor(
-  //   a / b
-  // )}${a % b}`;
-  return `input 1st number: ${a}\ninput 2nd number: ${b}\n和: ${a + b}\n差: ${
-    a - b
-  }\n積: ${a * b}\n商: ${Math.floor(a / b)}, 余り: ${a % b}`;
-
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-// 🥸ってかいたところは変数とか計算結果が入るよ
-// input 1st numberとかも忘れないであげてね🥲
-/*
-input 1st number: 🥸\n
-input 2nd number: 🥸\n
-和: 🥸\n
-差: 🥸\n
-積: 🥸\n
-商: 🥸, 余り: 🥸"
-*/

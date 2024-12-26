@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 11 ごあいさつ10回
 // Hello World! を10回繰り返して表示するプログラムを作成せよ。
@@ -17,18 +17,7 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 //   "Hello World!\n" を10回連結した文字列 (最後の行末については気にしない)
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  for (var x = 0; x < 10; x++) {
-    count += 1;
-    console.log(x);
-  }
-  var t = '';
-  var count = 0;
-  for (var x = 0; x < 10; x++) {
-    count += x;
-    t += 'Hello World!\n';
-  }
-  return t;
-
+  throw new TrainingSkipError();
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 18 配列を入力値で初期化
 // 要素数10の整数型配列を宣言し、整数値を入力させ、その値で全要素を初期化する。
@@ -26,8 +26,6 @@ import { TrainingSkipError } from '../src/common/TrainingSkipError.js';
 // @returns {string} "input number: num\n" + (numを10回表示)
 export const knock = (num = 6) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
   throw new TrainingSkipError();
-
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
