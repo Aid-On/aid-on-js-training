@@ -1,17 +1,23 @@
-import { knock } from '../src/knock017.js';
+import { knock } from "../src/knock017.js";
 
-// No. 17 配列を初期化 のテスト
-describe('No. 17 配列を初期化', () => {
-  test('配列の初期値を順に表示', () => {
-    // 結果を行ごとに分割
-    const lines = knock()
-      .split('\n')
-      .filter((line) => line !== '');
-    // 要素数10（0~9）
-    expect(lines.length).toBe(10);
-    // 0から9まで順に表示されているか
-    lines.forEach((line, index) => {
-      expect(line).toBe(String(index));
+describe("No. 17", () => {
+  test("0から9までの数値が格納された配列が返される", () => {
+    const result = knock();
+
+    // 配列が返されることを確認
+    expect(Array.isArray(result)).toBe(true);
+
+    // 要素数が10であることを確認
+    expect(result).toHaveLength(10);
+
+    // 各要素が期待される値と一致することを確認
+    result.forEach((value, index) => {
+      expect(value).toBe(index);
+    });
+
+    // 要素が数値型であることを確認
+    result.forEach((value) => {
+      expect(typeof value).toBe("number");
     });
   });
 });
