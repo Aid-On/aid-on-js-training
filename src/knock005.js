@@ -35,7 +35,3 @@ export const knock = (a = 123, b = 7) => {
   throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-`1行目
-2行目
-3行目`;
