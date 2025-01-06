@@ -8,6 +8,8 @@
 var text = "あいうえお";
 const result = "abcde";
 
+text = "かきくけこ";
+console.log(text);
 // ---- テンプレートリテラル ----
 // 複雑な文字列を取り扱う場合
 // お題： text と result をそれぞれ表示したい

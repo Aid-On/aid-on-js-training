@@ -24,6 +24,6 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "input number: num" (num が 0 または負 のとき)
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -18,20 +18,29 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: x\n..." が 0 に出会うまで繰り返される
 export const knock = (inputs = [5, 3, -4, 0]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-// 通行人 < 1, 2, 3, 0 (今回は 1, 2, 3, 0
-// 通行人 < 2, 0
 
 console.log(knock([1, 2, 3, 0]));
 // console.log(knock([4, 8, 7, 2, 0]));
 
 // node src/knock016.js
 
-// [4, 5, 7, 0]
+// ヒント1
+// inputsが次だとしたら [4, 5, 7, 0, 1, 2, 3]
+//
+// input number: 4
 // input number: 5
 // input number: 7
 // input number: 0
-// input number: undefined
+
+// ヒント2
+// whileループで何がくるか分からない配列を見ていくとき
+// inputsの最初から最後までを全部見ようとする
+//
+// var index = 0
+// while(inputs[index] !== ？) {
+//   // やりたいこと
+//   index++;
+// }

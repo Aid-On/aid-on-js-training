@@ -1,3 +1,23 @@
+/*
+[{
+ playerName: "kotorody"
+},
+{
+ playerName: "atzurody"
+}]
+*/
+
+const players = [];
+players[0] = {
+  playerName: "kotorody",
+};
+players[1] = {
+  playerName: "atzurody",
+};
+
+players[0]; // kotorody
+players[1]; // atzurody
+
 const main = () => {
   // 1 空っぽの配列の作り方
   // JavaScriptの配列 Array

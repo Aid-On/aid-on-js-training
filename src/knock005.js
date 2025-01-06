@@ -32,6 +32,10 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   商: 🥸, 余り: 🥸"
 export const knock = (a = 123, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+`1行目
+2行目
+3行目`;

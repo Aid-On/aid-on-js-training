@@ -3,7 +3,11 @@
 // function tp(name, x, y, z) {
 //   console.log(`${name}を (${x}, ${y}, ${z})に転送しました`);
 // }
-
+// tp("k", 0, 60, 0);
+// function tax(money) {
+//   return money * 0.1 + money;
+// }
+// console.log(`${tax(100)}`);
 // 何もしない関数
 function 関数1() {}
 
@@ -37,3 +41,12 @@ const const関数 = () => {
 
 // 関数の使い方
 tp("atzurody", -1800, -60, -200);
+
+const tax = (money) => {
+  return money * 0.1 + money;
+};
+console.log(tax(100));
+const salary = (hourly, worktime) => {
+  return hourly * worktime;
+};
+console.log(salary(968, 20 * 6));

@@ -2,8 +2,10 @@
 var x = 999;
 
 console.log(x); // => 999
+hogehoge();
+
 function hogehoge() {
-  // 関数のスコープ 空間だから
+  console.log(x); // 関数のスコープ 空間だから
   var x = 0;
   console.log(x); // => 0
   if (x === 0) {

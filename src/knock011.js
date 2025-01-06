@@ -17,15 +17,12 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "Hello World!\n" を10回連結した文字列 (最後の行末については気にしない)
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
 // 文字列も += で足し算追加できるよ
 // var x = ""
 // x += "あいうえお" // => あいうえお
+// x += "かきくけこ" // => あいうえお
 // console.logの中で実行するのは怪しいかも
-// 👏
-// おなじ　変数名を使うと怒られちゃうよ
-// xが人気者になってて数値なのか文字なのか困ってそう
-// forループ用の変数と、文字用の変数が2ついるかも？

@@ -19,17 +19,21 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //
 // @param {number} num
 // @returns {string} "input number: num\n0\n1\n...num"
+//
+// input number: 3
+// 0
+// 1
+// 2
+// 3
 export const knock = (num = 5) => {
-  throw new TrainingSkipError();
+  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
 /*
-input number: 5
+input number: 2
 0
 1
 2
-3
-4
-5
 */

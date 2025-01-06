@@ -14,9 +14,9 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   for (let i = 0; i < num; i++) { ... }
 //
 // @param {number} num
-// @returns {string} "input number: num\n" + "Hello World!\n" * num
+// @returns {string} "input number: num\n" + "Hello World!\n"
 export const knock = (num = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError();
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

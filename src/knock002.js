@@ -14,8 +14,13 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {number} result
 export const knock = (a = 12345, b = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-
-  throw new TrainingSkipError();
-
+  throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// result 結果
+// 足し算 a + b
+// 引き算 a - b
+// 掛け算 a * b
+// 割り算 a / b
+// 割り算の余り a % b
