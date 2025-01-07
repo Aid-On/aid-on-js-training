@@ -15,6 +15,7 @@
  * - ループ内での計算と代入: arr[i] = inputs[i] * 2;
  *
  * 配列に length というフィールドが用意されていて
+ * arr.length // -> 配列の中のアイテムの個数
  *
  * array[0] -> 1番目の要素が取れる 4
  * array[1] -> 2番目の要素が取れる 6
@@ -25,6 +26,13 @@
  */
 export const knock = (inputs = [4, 6, 7, 3, 1]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  const arr = new Array(5);
+  for (var x = 0; x < 5; x++) {
+    arr[x] = inputs[x] * 2;
+  }
+  return arr;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// 4, 6, 7, 3, 1 だとしたら
+// 8, 13, 14, 6, 2 を期待してる

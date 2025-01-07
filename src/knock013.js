@@ -27,7 +27,11 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // 3
 export const knock = (num = 5) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  var text = "";
+  for (var x = 0; x <= num; x++) {
+    text += `${x}\n`;
+  }
+  return `input number: ${num}\n` + text;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

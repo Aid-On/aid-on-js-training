@@ -9,6 +9,6 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  return "Hello, World!\n";
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

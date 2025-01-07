@@ -19,6 +19,10 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: num\n(numから0までの数字を1つずつ改行)"
 export const knock = (num = 5) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  var text = "";
+  for (var x = num; x >= 0; x--) {
+    text += `${x}\n`;
+  }
+  return `input number: ${num}\n` + text;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

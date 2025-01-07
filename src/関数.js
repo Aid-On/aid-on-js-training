@@ -42,6 +42,7 @@ const const関数 = () => {
 // 関数の使い方
 tp("atzurody", -1800, -60, -200);
 
+税金を求める関数;
 const tax = (money) => {
   return money * 0.1 + money;
 };

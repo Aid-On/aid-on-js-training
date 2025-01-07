@@ -23,8 +23,12 @@
  */
 export const knock = (num = 6) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  const arr = Array(10);
+  for (var x = 0; x < 10; x++) {
+    arr[x] = num;
+  }
+  return arr;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
-console.log(knock(9));
+console.log(knock(6));
