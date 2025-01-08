@@ -55,7 +55,7 @@ export const janken = (
   player2 = { name: "atzurody", hand: "P" }
 ) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実施");
+  return { winner: player1.name, losser: player2.name };
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
