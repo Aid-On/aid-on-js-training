@@ -14,6 +14,7 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {number} 24時間の降水量
 export const knock = (n) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実施");
+  const total = n * 24;
+  return total;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

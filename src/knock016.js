@@ -18,7 +18,14 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: x\n..." が 0 に出会うまで繰り返される
 export const knock = (inputs = [5, 3, -4, 0]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実施");
+  var index = 0;
+  var result = "";
+  while (inputs[index] !== 0) {
+    result += `input number: ${inputs[index]}\n`;
+    index++;
+  }
+  result += `input number: 0\n`;
+  return result;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
@@ -52,4 +59,3 @@ console.log(knock([1, 2, 3, 0]));
 // while(inputs[index] !== ？) {
 //   // やりたいこと
 //   index++;
-// }

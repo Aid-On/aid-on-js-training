@@ -19,6 +19,10 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "input number: num\n" + "0\n2\n4...\n" (0からnumを超えない範囲で2ずつ)
 export const knock = (num = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実施");
+  var text = `input number: ${num}\n`;
+  for (var x = 0; x <= num; x += 2) {
+    text += `${x}\n`;
+  }
+  return text;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
