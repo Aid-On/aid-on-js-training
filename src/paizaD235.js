@@ -14,7 +14,6 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {number} 5人兄弟の総重量
 export const knock = (W) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const totalWeight = W * 5;
-  return totalWeight;
+  throw new TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

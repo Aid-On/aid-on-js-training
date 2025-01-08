@@ -49,25 +49,7 @@ export const knock = (
   ]
 ) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const jankenncount = inputs[0];
-  var count = 0;
-  for (var x = 1; x <= jankenncount; x++) {
-    console.log(inputs[x]);
-    const janken = inputs[x].split(" "); // => "C C" という文字列が入ってる
-    const arisuHand = janken[0]; // => "G" ぐー "C" ちょき "P" パー
-    const bobuHand = janken[1]; // => "G" ぐー "C" ちょき "P" パー
-    console.log(janken, "アリス：", arisuHand, ", ボブ：", bobuHand);
-
-    if (arisuHand === "G" && bobuHand === "C") {
-      count += 1;
-    } else if (arisuHand === "P" && bobuHand === "G") {
-      count += 1;
-    } else if (arisuHand === "C" && bobuHand === "P") {
-      count += 1;
-    }
-  }
-
-  return count;
+  throw new TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
