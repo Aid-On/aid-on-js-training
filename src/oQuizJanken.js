@@ -55,7 +55,7 @@ export const janken = (
   player2 = { name: "atzurody", hand: "P" }
 ) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return { winner: player1.name, losser: player2.name };
+  return { winner: player1.name, loser: player2.name };
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
