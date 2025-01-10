@@ -19,8 +19,85 @@
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  const arr = [];
+  for (var x = 0; x < 10; x++) {
+    arr[x] = x;
+  }
+
+  return arr;
+
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
-console.log(knock());
+const arraySample = () => {
+  const bag = [];
+  const oak = "オークの原木";
+  const oakPlanks = "オークの板材";
+  bag[0] = oak;
+  bag.push("豚肉");
+  bag[0] = oakPlanks;
+  return bag;
+};
+
+const arraySample2 = () => {
+  const droppedItems = [
+    "銅の原石",
+    "石炭",
+    "銅の原石",
+    "銅の原石",
+    "銅の原石",
+    "銅の原石",
+    "金の原石",
+    "銅の原石",
+    "銅の原石",
+    "銅の原石",
+    "銅の原石",
+    "ダイヤモンドの原石",
+    "銅の原石",
+    "銅の原石",
+    "銅の原石",
+  ];
+  console.log(`落ちてるアイテムの数は${droppedItems.length}個です`);
+  const bag = [];
+  for (var x = 0; x < droppedItems.length; x++) {
+    if (droppedItems[x] !== "銅の原石") {
+      // bag[x] = droppedItems[x];
+      bag.push(droppedItems[x]);
+    }
+  }
+  return bag; // => ["石炭", "金の原石", "ダイヤモンドの原石"]
+};
+
+// => [] / [[]]
+
+console.log(arraySample2());
+
+// 配列.push(追加したい要素)
+
+const arr = [];
+const arr2 = new Array();
+
+const obj = {};
+
+class Dog {
+  name = "ポチ";
+
+  足の数() {
+    return 4;
+  }
+}
+
+const 犬 = Dog();
+犬.足の数; // => 4
+
+// ----
+
+/*
+(HTML)
+<div class="dog"></div>
+
+(CSS)
+.dog {
+  background-color: brown;
+}
+*/

@@ -19,11 +19,15 @@
  *   - new Array(10).fill(num);    // 同上
  *
  * @param {number} num - 配列を初期化する値（デフォルト値: 6）
- * @returns {number[]} 指定された値で初期化された10要素の配列
+ * @returns {Array<number>} 指定された値で初期化された10要素の配列
  */
 export const knock = (num = 6) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  const arr = [];
+  for (var x = 0; x < 10; x++) {
+    arr[x] = num;
+  }
+  return arr;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 
