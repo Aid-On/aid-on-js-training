@@ -17,7 +17,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
 // - このトレーニングでは、関数の引数として入力値を受け取ります。
 // - 総和は、forループを使って計算することができます。
 // - 入力値が0以下の場合は、直接0を返すようにしましょう。
-// - Mathの組み込み関数（例: Math.max, Math.min）も活用できるかもしれません。
 
 /**
  * 入力された値に応じて1からその値までの総和を計算する関数
@@ -26,6 +25,17 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (n) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return new TrainingSkipError("未実装");
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+const input = 5;
+console.log(`knock(${input}) => `, knock(input));
+
+/*
+  for (var x = 0; x <= num; x++) {
+    text += `${x}\n`;
+  }
+*/
+
+// for (var x = 5; x >= 0; x--) {}
+// for (var x = 0; x <= 3; x++) {}

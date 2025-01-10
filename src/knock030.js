@@ -19,16 +19,16 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
 
 // [Tips]
 // - このトレーニングでは、関数の引数として整数値を受け取ります。
-// - 棒グラフの長さは入力値に応じて `*` を繰り返して表示します。
+// - 棒グラフの長さは入力値に応じて "*" を繰り返して表示します。
 // - 入力が0以下の場合は空文字列を返してください。
 
 /**
  * 入力された値に応じて棒グラフを作成する関数
  * @param {number} n - 入力された整数値
- * @returns {string} - 棒グラフ（`*`をn個並べた文字列）。nが0以下の場合は空文字列。
+ * @returns {string} - 棒グラフ（"*"をn個並べた文字列）。nが0以下の場合は空文字列。
  */
 export const knock = (n = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return new TrainingSkipError("未実装");
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

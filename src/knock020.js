@@ -10,8 +10,7 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
 //     1つ目の値: 10
 //     2つ目の値: 3
 //   出力:
-//     割り算の結果: 3
-//     掛け算の結果: 9
+//     [3, 9]
 
 // 注意:
 // - 割り算の結果が割り切れない場合、整数型で切り捨てられる。
@@ -23,13 +22,13 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @param {number} value2 - 2つ目の整数値
  * @returns {Array<number>} - [割り算の結果, 掛け算の結果]
  */
-export const knock = (value1, value2) => {
+export const knock = (value1 = 10, value2 = 3) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
   // ここに実装を記述してください
   // 例: 0で割る場合はエラーを投げる処理
   // if (value2 === 0) {
   //   throw new Error("2つ目の値が0のため、割り算はできません");
   // }
-  throw new TrainingSkipError("未実装");
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

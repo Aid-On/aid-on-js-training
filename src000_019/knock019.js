@@ -26,11 +26,7 @@
  */
 export const knock = (inputs = [4, 6, 7, 3, 1]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  var arr = [];
-  for (var x = 0; x < 5; x++) {
-    arr[x] = inputs[x] * 2;
-  }
-  return arr;
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

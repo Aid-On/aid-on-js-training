@@ -33,6 +33,13 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {number} - 入力された整数値の合計
  * @throws {Error} - 入力が5つでない場合にエラーをスロー
  */
-export const knock = (numbers) => {
+export const knock = (numbers = [11, 22, 33, 44, 55]) => {
+  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
   return TrainingSkipError("未実装");
+  // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// 不正なナマズたち
+// [2,2]
+// []
+// [1,2,3,4,5,6,7,8,9]

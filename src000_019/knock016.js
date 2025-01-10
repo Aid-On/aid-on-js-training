@@ -18,16 +18,22 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: x\n..." が 0 に出会うまで繰り返される
 export const knock = (inputs = [5, 3, -4, 0]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  var index = 0;
-  var result = "";
-  while (inputs[index] !== 0) {
-    result += `input number: ${inputs[index]}\n`;
-    index++;
-  }
-  result += `input number: 0\n`;
-  return result;
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
+
+// [起きてる問題]
+// ✅ 問題にない数字が入ってる
+// 回答してるテキストの行数が全部１つ
+// input number: 0 が含まれてない
+
+// 比較演算子
+// A < B    AはB未満
+// A <= B   AはB以下
+// A > B    AはB超過
+// A >= B   AはB以上
+// A === B  AとBが同じ
+// A !== B  AとBは違う
 
 /*
 あってる部分

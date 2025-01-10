@@ -42,12 +42,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (number) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実装");
-  switch (number) {
-    case 0: // 入力値が0の場合
-      return "ゼロ"; // "ゼロ"を返す
-    default: // 上記以外のすべての値の場合
-      return "その他"; // "その他"を返す
-  }
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

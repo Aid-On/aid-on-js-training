@@ -1,6 +1,6 @@
 import { knock } from "../src/knock022.js";
 
-describe("No. 22 -10以下または10以上", () => {
+describe("No. 22", () => {
   test("入力が10の場合: number = 10", () => {
     const result = knock(10);
     // 条件に一致するので "OK"

@@ -1,6 +1,6 @@
 import { knock } from "../src/knock021.js";
 
-describe("No. 21 文字列の繰り返し", () => {
+describe("No. 21", () => {
   test("入力例1: str = 'abc', count = 3", () => {
     const result = knock("abc", 3);
     // 繰り返し結果: "abcabcabc"

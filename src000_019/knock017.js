@@ -19,11 +19,7 @@
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  var arr = [];
-  for (var x = 0; x < 10; x++) {
-    arr[x] = x;
-  }
-  return arr;
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

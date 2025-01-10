@@ -1,6 +1,6 @@
 import { knock } from "../src/knock020.js";
 
-describe("No. 20 割って掛ける", () => {
+describe("No. 20", () => {
   test("入力例1: value1 = 10, value2 = 3", () => {
     const result = knock(10, 3);
     // 割り算の結果: 10 ÷ 3 = 3（切り捨て）
