@@ -26,8 +26,8 @@
  */
 export const knock = (inputs = [4, 6, 7, 3, 1]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const arr = [];
-  for (var x = 0; x < inputs.length; x++) {
+  var arr = [];
+  for (var x = 0; x < arr.length; x++) {
     arr[x] = inputs[x] * 2;
   }
   return arr;
