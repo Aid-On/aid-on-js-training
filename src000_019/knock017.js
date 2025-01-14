@@ -19,6 +19,7 @@
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
+<<<<<<< Updated upstream
   const arr = [];
   for (var x = 0; x < 10; x++) {
     arr[x] = x;
@@ -26,6 +27,9 @@ export const knock = () => {
 
   return arr;
 
+=======
+  throw new TrainingSkipError("未実装");
+>>>>>>> Stashed changes
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

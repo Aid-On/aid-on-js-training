@@ -26,11 +26,15 @@
  */
 export const knock = (inputs = [4, 6, 7, 3, 1]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
+<<<<<<< Updated upstream
   const arr = [];
   for (var x = 0; x < inputs.length; x++) {
     arr[x] = inputs[x] * 2;
   }
   return arr;
+=======
+  throw new TrainingSkipError("未実装");
+>>>>>>> Stashed changes
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

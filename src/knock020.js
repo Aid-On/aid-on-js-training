@@ -29,8 +29,13 @@ export const knock = (value1 = 10, value2 = 3) => {
   // if (value2 === 0) {
   //   throw new Error("2つ目の値が0のため、割り算はできません");
   // }
-
-  if (value2 === 0) {
-  }
+  // if (value2 === 0) {
+  //   throw new Error("2つ目の値が0のため、割り算はできません");
+  // }
+  // const result = (value1, value2);
+  // result = value1 / value2;
+  // value2 = result * value2;
+  // return result;
+  throw new TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

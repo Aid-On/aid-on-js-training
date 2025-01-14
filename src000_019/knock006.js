@@ -19,10 +19,6 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "input number: num" (num が 0 以外のとき)
 export const knock = (num = 0) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  if (num === 0) {
-    return `input number: ${num}\nzero`;
-  } else {
-    return `input number: ${num}`;
-  }
+  throw new TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
