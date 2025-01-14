@@ -9,6 +9,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return "Hello, World!\n";
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
