@@ -21,9 +21,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (str, count) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  var text = ""
-  for (var x = 0;) {
-
-  }
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

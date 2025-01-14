@@ -18,19 +18,20 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: x\n..." が 0 に出会うまで繰り返される
 export const knock = (inputs = [5, 3, -4, 0]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-<<<<<<< Updated upstream
-  var text = "";
-  var x = 0;
-  while (inputs[x] !== 0) {
-    text += `input number: ${inputs[x]}\n`;
-    x += 1;
-  }
-  text += `input number: ${0}\n`;
-  return text;
-=======
-  throw new TrainingSkipError("未実装");
->>>>>>> Stashed changes
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
+};
+
+/*
+[期待結果]
+input number: 5
+input number: 3
+input number: -4
+input number: 0
+*/
+
+const question1 = () => {
+  const numbers = [4, 5, 6];
 };
 
 // [起きてる問題]

@@ -17,7 +17,7 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //   "Hello World!\n" を10回連結した文字列 (最後の行末については気にしない)
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実装");
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 knock();

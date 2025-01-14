@@ -27,6 +27,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
 //   "input number: num\nzero"       (num === 0)
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw new TrainingSkipError("未実装");
+  return TrainingSkipError("未実装");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
