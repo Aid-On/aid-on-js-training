@@ -27,25 +27,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - 表示する値の配列
  */
 export const knock = () => {
-  // 配列の初期化
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  // 最初の参照する要素番号
-  let currentIndex = 0;
-
-  // 結果を格納する配列
-  const result = [];
-
-  // 10回繰り返し
-  for (let i = 0; i < 10; i++) {
-    // 現在の参照する値を結果に追加
-    const currentValue = array[currentIndex];
-    result.push(currentValue);
-
-    // 次の参照する要素番号を更新
-    currentIndex = currentValue;
-  }
-
-  // 結果を返す
-  return result;
+  throw new TrainingSkipError("未実装");
 };

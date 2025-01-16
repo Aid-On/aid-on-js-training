@@ -25,15 +25,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {number} - 入力値の階乗（n!）。nが0以下の場合は1。
  */
 export const knock = (n = 5) => {
-  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  if (n <= 0) {
-    return 1;
-  }
-  var count = 1;
-  for (var x = 1; x <= n; x++) {
-    count *= x;
-  }
-
-  return count;
-  // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
+  throw new TrainingSkipError("未実装");
 };

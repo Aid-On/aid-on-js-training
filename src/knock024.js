@@ -23,12 +23,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 条件に一致する場合 "OK"、一致しない場合 "NG"
  */
 export const knock = (number) => {
-  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  // ここに実装を記述してください
-  if ((number >= -10 && number < 0) || number >= 10) {
-    return "OK";
-  } else {
-    return "NG";
-  }
-  // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
+  throw new TrainingSkipError("未実装");
 };

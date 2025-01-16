@@ -28,21 +28,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - 計算結果を格納した配列
  */
 export const knock = () => {
-  // 配列の初期化
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  // 結果を格納する配列
-  const result = [];
-
-  // 配列の要素を順に計算（9回繰り返す）
-  for (let i = 0; i < array.length - 1; i++) {
-    // 現在の要素の値 - 次の要素の値
-    const difference = array[i] - array[i + 1];
-
-    // 結果を格納
-    result.push(difference);
-  }
-
-  // 結果を返す
-  return result;
+  throw new TrainingSkipError("未実装");
 };

@@ -20,11 +20,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 繰り返し結果の文字列
  */
 export const knock = (str, count) => {
-  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  var text = "";
-  for (var x = 0; x < count; x++) {
-    text += str;
-  }
-  return text;
-  // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
+  throw new TrainingSkipError("未実装");
 };

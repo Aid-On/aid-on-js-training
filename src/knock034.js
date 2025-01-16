@@ -25,24 +25,5 @@
  * @returns {Array<number>} - 入力値と入力値+1を除いた1から9までの数字
  */
 export const knock = (exclude) => {
-  // 1から9の範囲外の場合はすべての数字を返す
-  if (exclude < 1 || exclude > 9) {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  }
-
-  // 結果を格納する配列
-  const result = [];
-
-  // 1から9まで繰り返し
-  for (let i = 1; i <= 9; i++) {
-    // 入力値または入力値+1の場合はスキップ
-    if (i === exclude || i === exclude + 1) {
-      continue;
-    }
-    // 上記以外の場合は配列に追加
-    result.push(i);
-  }
-
-  // 完成した配列を返す
-  return result;
+  throw new TrainingSkipError("未実装");
 };

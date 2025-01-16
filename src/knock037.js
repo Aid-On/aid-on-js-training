@@ -23,15 +23,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 最終的に取得した値を文字列で返す
  */
 export const knock = (index) => {
-  // 配列の初期化
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  // 最初の参照: 入力されたインデックスの配列要素を取得
-  const firstValue = array[index];
-
-  // 次の参照: firstValue をインデックスとする配列要素を取得
-  const secondValue = array[firstValue];
-
-  // 結果をフォーマットして返す
-  return `value = ${secondValue}`;
+  throw new TrainingSkipError("未実装");
 };

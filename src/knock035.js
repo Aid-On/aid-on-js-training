@@ -30,12 +30,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 配列の要素を示す文字列
  */
 export const knock = (index) => {
-  // 配列の初期化
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  // 入力されたインデックスの要素を取得
-  const value = array[index];
-
-  // 結果をフォーマットして返す
-  return `array[${index}] = ${value}`;
+  throw new TrainingSkipError("未実装");
 };
