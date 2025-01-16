@@ -21,6 +21,14 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  const arr = [];
+  for (var x = 1; x <= 20; x++) {
+    if (x % 5 === 0) {
+      arr.push("bar");
+    } else {
+      arr.push(x);
+    }
+  }
+  return arr;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -29,6 +29,13 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (n = 7) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  if (0 >= n) {
+    return "";
+  }
+  var text = "";
+  for (var x = 1; x <= n; x++) {
+    text += "*";
+  }
+  return text;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

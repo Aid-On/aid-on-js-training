@@ -20,6 +20,10 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (number) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  if (number >= -5 && number < 10) {
+    return "OK";
+  } else {
+    return "NG";
+  }
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

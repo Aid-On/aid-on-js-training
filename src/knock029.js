@@ -35,11 +35,13 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (numbers = [11, 22, 33, 44, 55]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  if (numbers.length !== 5) {
+    throw new Error("入力値は5つの整数である必要があります");
+  }
+  var count = 0;
+  for (var x = 0; x < 5; x++) {
+    count += numbers[x];
+  }
+  return count;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-// 不正なナマズたち
-// [2,2]
-// []
-// [1,2,3,4,5,6,7,8,9]

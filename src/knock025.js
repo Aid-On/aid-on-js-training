@@ -26,6 +26,12 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (number) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  if (number < -10) {
+    return "range 1";
+  } else if (number >= -10 && number < 0) {
+    return "range 2";
+  } else if (number >= 0) {
+    return "range 3";
+  }
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
