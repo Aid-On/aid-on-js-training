@@ -12,7 +12,7 @@ describe('Knock63 React test', () => {
     jest.useRealTimers();
   });
 
-  it('renders a circle moving in a circular path', () => {
+  it('renders a circle moving in a circular path with default parameters', () => {
     expect(() => {
       render(<Knock63 />);
     }).not.toThrow(TrainingSkipError);
@@ -20,19 +20,58 @@ describe('Knock63 React test', () => {
     const svg = document.querySelector('svg');
     expect(svg).toBeInTheDocument();
 
-    const circles = svg.querySelectorAll('circle');
-    expect(circles.length).toBe(2); // One for orbit path, one for moving circle
+    const orbitPath = document.querySelector('[data-testid="orbit-path"]');
+    const movingCircle = document.querySelector('[data-testid="moving-circle"]');
+    
+    expect(orbitPath).toBeInTheDocument();
+    expect(movingCircle).toBeInTheDocument();
 
-    // Test animation
-    const movingCircle = circles[1];
+    // Verify default parameters
+    expect(Number(orbitPath.getAttribute('r'))).toBe(100); // Default orbit radius
+    expect(Number(movingCircle.getAttribute('r'))).toBe(30); // Default circle radius
+
+    // Test default animation
     const initialX = movingCircle.getAttribute('cx');
     const initialY = movingCircle.getAttribute('cy');
 
     act(() => {
-      jest.advanceTimersByTime(50);
+      jest.advanceTimersByTime(50); // Default interval
     });
 
     // Position should change after time advancement
+    expect(movingCircle.getAttribute('cx')).not.toBe(initialX);
+    expect(movingCircle.getAttribute('cy')).not.toBe(initialY);
+  });
+
+  it('supports custom animation parameters', () => {
+    const customProps = {
+      angleIncrement: 10,
+      interval: 100,
+      orbitRadius: 50,
+      circleRadius: 15,
+      centerX: 200,
+      centerY: 150
+    };
+    
+    render(<Knock63 {...customProps} />);
+    
+    const orbitPath = document.querySelector('[data-testid="orbit-path"]');
+    const movingCircle = document.querySelector('[data-testid="moving-circle"]');
+
+    // Verify custom parameters
+    expect(Number(orbitPath.getAttribute('r'))).toBe(customProps.orbitRadius);
+    expect(Number(movingCircle.getAttribute('r'))).toBe(customProps.circleRadius);
+    expect(Number(orbitPath.getAttribute('cx'))).toBe(customProps.centerX);
+    expect(Number(orbitPath.getAttribute('cy'))).toBe(customProps.centerY);
+
+    const initialX = movingCircle.getAttribute('cx');
+    const initialY = movingCircle.getAttribute('cy');
+
+    act(() => {
+      jest.advanceTimersByTime(customProps.interval);
+    });
+
+    // Position should change according to custom parameters
     expect(movingCircle.getAttribute('cx')).not.toBe(initialX);
     expect(movingCircle.getAttribute('cy')).not.toBe(initialY);
   });
