@@ -2,14 +2,31 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内にシェルピンスキーの三角形フラクタルを描画します。
- * 頂点座標(300,50)、(150,350)、(450,350)の三角形を基準に、深さ6まで再帰的に分割します。
- * 各点は半径1pxの黒い円で表現され、フラクタルパターンを形成します。
+ * No. 77 シェルピンスキーの三角形フラクタルを描画
+ * 
+ * 問題: 600x400のSVGキャンバス内で、シェルピンスキーの三角形フラクタルを描画するコンポーネントを作成せよ。
+ * フラクタルの深さはプロパティとして設定可能とし、各点は黒い円として表示される。
+ * 
+ * 実行例:
+ *   - 初期表示: 頂点座標(300,50)、(150,350)、(450,350)の三角形を基準に、指定された深さまで再帰的に分割
+ *   - depth=6の場合: 約364個の点が描画される
+ *   - depth=7の場合: 約1093個の点が描画される
+ * 
+ * [Tips]
+ * - React.useState でフラクタルの点の配列を管理する
+ * - 再帰関数でフラクタルパターンを生成する
+ * - 深さは props として外部から制御可能にする
+ * - SVG の circle 要素で各点を描画する
+ * 
+ * @param {number} [depth=6] フラクタルの深さ（再帰の深さ）
+ * @param {Function} [onPointsGenerated] フラクタルの点が生成された後に呼ばれるコールバック関数
  * @returns {JSX.Element} シェルピンスキーの三角形フラクタルを持つSVGコンポーネント
  */
-export function Knock77() {
+export function Knock77({
+  depth = 6,
+  onPointsGenerated
+}) {
   const [points, setPoints] = useState([]);
-  const depth = 6;
   
   useEffect(() => {
     const generateSierpinski = (x1, y1, x2, y2, x3, y3, depth) => {
@@ -31,9 +48,13 @@ export function Knock77() {
       ];
     };
 
-    const points = generateSierpinski(300, 50, 150, 350, 450, 350, depth);
-    setPoints(points);
-  }, []);
+    const newPoints = generateSierpinski(300, 50, 150, 350, 450, 350, depth);
+    setPoints(newPoints);
+    
+    if (onPointsGenerated) {
+      onPointsGenerated(newPoints);
+    }
+  }, [depth, onPointsGenerated]);
 
   return (
     <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
