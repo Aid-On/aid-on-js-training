@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { Knock62 } from '../src060_079_react/Knock62';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
 describe('Knock62 React test', () => {
-  it('renders a movable circle and responds to keyboard input', () => {
+  it('renders a movable circle and responds to keyboard input with default behavior', () => {
     expect(() => {
       render(<Knock62 />);
     }).not.toThrow(TrainingSkipError);
@@ -13,17 +13,52 @@ describe('Knock62 React test', () => {
     const circle = document.querySelector('circle');
     
     expect(circle).toBeInTheDocument();
-    const initialX = circle.getAttribute('cx');
+    expect(Number(circle.getAttribute('cx'))).toBe(-270); // Check default initial position
 
     // Test left arrow movement
-    fireEvent.keyDown(container, { key: 'ArrowLeft', bubbles: true });
-    const afterLeft = circle.getAttribute('cx');
-    expect(Number(afterLeft)).toBe(Number(initialX) - 10);
+    act(() => {
+      fireEvent.keyDown(container, { key: 'ArrowLeft', bubbles: true });
+    });
+    expect(Number(circle.getAttribute('cx'))).toBe(-280); // Default move distance is 10
 
     // Test right arrow movement
-    fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
-    fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
-    const afterRight = circle.getAttribute('cx');
-    expect(Number(afterRight)).toBe(Number(initialX) + 10);
+    act(() => {
+      fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
+      fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
+    });
+    expect(Number(circle.getAttribute('cx'))).toBe(-260);
+  });
+
+  it('accepts custom initial position and move distance', () => {
+    render(<Knock62 initialX={0} moveDistance={20} />);
+    
+    const container = document.querySelector('div');
+    const circle = document.querySelector('circle');
+    
+    expect(Number(circle.getAttribute('cx'))).toBe(0);
+
+    act(() => {
+      fireEvent.keyDown(container, { key: 'ArrowLeft', bubbles: true });
+    });
+    expect(Number(circle.getAttribute('cx'))).toBe(-20);
+  });
+
+  it('calls custom movement handlers when provided', () => {
+    const onMoveLeft = jest.fn();
+    const onMoveRight = jest.fn();
+    
+    render(<Knock62 onMoveLeft={onMoveLeft} onMoveRight={onMoveRight} />);
+    
+    const container = document.querySelector('div');
+    
+    act(() => {
+      fireEvent.keyDown(container, { key: 'ArrowLeft', bubbles: true });
+    });
+    expect(onMoveLeft).toHaveBeenCalledTimes(1);
+    
+    act(() => {
+      fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
+    });
+    expect(onMoveRight).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './index.css';
 
 /**
@@ -7,19 +7,38 @@ import './index.css';
  * 初期位置はx=-270で、キー入力で左右に移動できます。
  * @returns {JSX.Element} キー操作で移動可能な円を持つSVGコンポーネント
  */
-export function Knock62() {
-  const [circleX, setCircleX] = useState(-270);
+export function Knock62({
+  initialX = -270,
+  onMoveLeft,
+  onMoveRight,
+  moveDistance = 10
+}) {
+  const [circleX, setCircleX] = useState(initialX);
   const circleY = 200;
   const radius = 30;
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     e.preventDefault(); // Prevent default scroll behavior
     if (e.key === 'ArrowLeft') {
-      setCircleX(x => x - 10);
+      if (onMoveLeft) {
+        onMoveLeft();
+      }
+      setCircleX(x => x - moveDistance);
     } else if (e.key === 'ArrowRight') {
-      setCircleX(x => x + 10);
+      if (onMoveRight) {
+        onMoveRight();
+      }
+      setCircleX(x => x + moveDistance);
     }
-  };
+  }, [moveDistance, onMoveLeft, onMoveRight]);
+
+  useEffect(() => {
+    // Add event listener to document to ensure it catches all keyboard events
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <div 
