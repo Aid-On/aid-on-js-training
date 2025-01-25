@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw expanding/contracting circles in a pattern
- * @returns {JSX.Element} SVG component with pulsing circle pattern
+ * 600x400のウィンドウ内で拡大縮小する6つの円を描画します。
+ * 中心座標(300,200)を中心に、半径80pxの円周上に配置されます。
+ * 各円の基本半径は20pxで、±30%の範囲でサイズが変化します。
+ * アニメーションは50msごとに更新され、位相が0.1ずつ変化します。
+ * @returns {JSX.Element} 拡大縮小する円のパターンを持つSVGコンポーネント
  */
 export function Knock75() {
   const [time, setTime] = useState(0);

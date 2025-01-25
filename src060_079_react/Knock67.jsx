@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw a grid of circles that change color on click
- * @returns {JSX.Element} SVG component with interactive grid of circles
+ * 600x400のウィンドウ内に5x5のグリッド状に配置された円を描画します。
+ * 各円の半径は20pxで、60pxの間隔で配置されます。
+ * クリックすると円の色が白と黒で切り替わります。
+ * @returns {JSX.Element} クリックで色が変化する円のグリッドを持つSVGコンポーネント
  */
 export function Knock67() {
   const gridSize = 5;

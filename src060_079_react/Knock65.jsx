@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that bounces diagonally in the window
- * @returns {JSX.Element} SVG component with bouncing circle animation
+ * 600x400のウィンドウ内で斜めに跳ね返る円を描画します。
+ * 円の半径は30pxで、x方向に5px、y方向に5pxの速度で移動します。
+ * ウィンドウの端に到達すると反射して跳ね返ります。
+ * アニメーションは50msごとに更新されます。
+ * @returns {JSX.Element} 斜めに跳ね返る円のアニメーションを持つSVGコンポーネント
  */
 export function Knock65() {
   const [position, setPosition] = useState({ x: 30, y: 30 });

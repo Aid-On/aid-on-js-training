@@ -2,8 +2,9 @@ import React from 'react';
 import './index.css';
 
 /**
- * Draw a 200x200 square at (200,100) with an inscribed circle
- * @returns {JSX.Element} SVG component with square and inscribed circle
+ * 600x400のウィンドウ内の座標(200,100)に200x200の正方形と内接円を描画します。
+ * 正方形の中心に半径100pxの円を配置し、正方形と円の境界が接するように描画します。
+ * @returns {JSX.Element} 正方形と内接円を持つSVGコンポーネント
  */
 export function Knock61() {
   // For a square of size 200, the inscribed circle radius is 100

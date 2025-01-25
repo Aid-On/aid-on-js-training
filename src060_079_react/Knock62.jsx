@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that moves horizontally based on user input
- * @returns {JSX.Element} Interactive SVG component with movable circle
+ * 600x400のウィンドウ内で左右の矢印キーで水平に移動する円を描画します。
+ * 円の半径は30pxで、キー入力ごとに10pxずつ移動します。
+ * 初期位置はx=-270で、キー入力で左右に移動できます。
+ * @returns {JSX.Element} キー操作で移動可能な円を持つSVGコンポーネント
  */
 export function Knock62() {
   const [circleX, setCircleX] = useState(-270);

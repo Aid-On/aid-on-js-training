@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a spiral pattern of circles
- * @returns {JSX.Element} SVG component with spiral pattern
+ * 600x400のウィンドウ内に螺旋状に配置された50個の円を描画します。
+ * 各円の半径は10pxで、中心座標(300,200)から螺旋状に広がります。
+ * 円と円の間の角度は0.5ラジアンで、距離は5pxずつ増加します。
+ * @returns {JSX.Element} 螺旋状のパターンを持つSVGコンポーネント
  */
 export function Knock74() {
   const [circles, setCircles] = useState([]);

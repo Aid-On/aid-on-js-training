@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw multiple bouncing circles with different velocities
- * @returns {JSX.Element} SVG component with multiple bouncing circles
+ * 600x400のウィンドウ内で異なる速度で跳ね返る3つの円を描画します。
+ * 各円の半径は20pxで、それぞれ異なる初期位置と速度を持ちます。
+ * ウィンドウの端に到達すると反射して跳ね返ります。
+ * アニメーションは50msごとに更新されます。
+ * @returns {JSX.Element} 複数の跳ね返る円のアニメーションを持つSVGコンポーネント
  */
 export function Knock73() {
   const [circles, setCircles] = useState([

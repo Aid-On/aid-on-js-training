@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a binary tree fractal
- * @returns {JSX.Element} SVG component with binary tree fractal
+ * 600x400のウィンドウ内に二分木フラクタルを描画します。
+ * 座標(300,350)から上向きに開始し、深さ8まで再帰的に枝分かれします。
+ * 各枝の長さは親の0.7倍で、分岐角度は親に対して±45度です。
+ * 各枝は黒い線で描画され、幅は1pxです。
+ * @returns {JSX.Element} 二分木フラクタルを持つSVGコンポーネント
  */
 export function Knock78() {
   const [lines, setLines] = useState([]);

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw a 10x10 grid of circles with alternating colors
- * @returns {JSX.Element} SVG component with colored grid pattern
+ * 600x400のウィンドウ内に10x10のグリッド状の円を描画します。
+ * 各円の半径は15pxで、40pxの間隔で配置されます。
+ * 市松模様のように、隣り合う円が白と黒で交互に配色されます。
+ * @returns {JSX.Element} 市松模様状の円のグリッドを持つSVGコンポーネント
  */
 export function Knock70() {
   const gridSize = 10;

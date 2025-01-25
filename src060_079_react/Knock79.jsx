@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a Mandelbrot set visualization
- * @returns {JSX.Element} SVG component with Mandelbrot set
+ * 600x400のウィンドウ内にマンデルブロ集合を可視化します。
+ * 複素平面上の点を2pxごとにサンプリングし、最大100回の反復で収束判定を行います。
+ * 収束しない点は黒く、収束する点は反復回数に基づいてHSL色相で着色されます。
+ * 表示範囲は実部[-2.5,1]、虚部[-1,1]の領域です。
+ * @returns {JSX.Element} マンデルブロ集合の可視化を持つSVGコンポーネント
  */
 export function Knock79() {
   const [points, setPoints] = useState([]);

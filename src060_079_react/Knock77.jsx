@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a Sierpinski triangle fractal
- * @returns {JSX.Element} SVG component with Sierpinski triangle
+ * 600x400のウィンドウ内にシェルピンスキーの三角形フラクタルを描画します。
+ * 頂点座標(300,50)、(150,350)、(450,350)の三角形を基準に、深さ6まで再帰的に分割します。
+ * 各点は半径1pxの黒い円で表現され、フラクタルパターンを形成します。
+ * @returns {JSX.Element} シェルピンスキーの三角形フラクタルを持つSVGコンポーネント
  */
 export function Knock77() {
   const [points, setPoints] = useState([]);

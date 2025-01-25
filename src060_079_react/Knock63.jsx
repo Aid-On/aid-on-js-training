@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that moves in a circular path
- * @returns {JSX.Element} SVG component with animated circle
+ * 600x400のウィンドウ内で円軌道を描く円を描画します。
+ * 中心座標(300,200)を中心に、半径100pxの軌道上を半径30pxの円が移動します。
+ * アニメーションは50msごとに更新され、2度ずつ回転します。
+ * @returns {JSX.Element} 円軌道上を移動する円のアニメーションを持つSVGコンポーネント
  */
 export function Knock63() {
   const [angle, setAngle] = useState(0);

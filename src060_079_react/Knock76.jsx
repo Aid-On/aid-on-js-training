@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a Monte Carlo simulation for calculating π
- * @returns {JSX.Element} SVG component with Monte Carlo π calculation visualization
+ * 600x400のウィンドウ内でモンテカルロ法によるπの計算をシミュレーションします。
+ * 300x300の正方形内に半径150pxの円を描き、1000個のランダムな点を生成します。
+ * 円の内外の点の比率から πの値を推定し、画面左上に表示します。
+ * 点は円内が青、円外が赤で表示され、50msごとに1点ずつ追加されます。
+ * @returns {JSX.Element} モンテカルロ法によるπ計算のビジュアライゼーションを持つSVGコンポーネント
  */
 export function Knock76() {
   const [points, setPoints] = useState([]);

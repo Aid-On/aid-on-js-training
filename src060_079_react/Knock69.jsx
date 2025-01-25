@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw multiple circles in a wave pattern
- * @returns {JSX.Element} SVG component with animated wave of circles
+ * 600x400のウィンドウ内で波状に動く10個の円を描画します。
+ * 円は半径20pxで、50pxの振幅と0.1の周波数で波を描きます。
+ * アニメーションは50msごとに更新され、波の位相が0.1ずつ変化します。
+ * @returns {JSX.Element} 波状に動く円のアニメーションを持つSVGコンポーネント
  */
 export function Knock69() {
   const [time, setTime] = useState(0);

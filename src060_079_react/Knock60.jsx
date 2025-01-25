@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw a circle with specified center coordinates in a 600x400 window
- * @param {Object} props - Component properties
- * @param {number} [props.cx=200] - X coordinate for circle center
- * @param {number} [props.cy=150] - Y coordinate for circle center
- * @returns {JSX.Element} SVG circle component
+ * 600x400のウィンドウ内に指定された中心座標で円を描画します。
+ * @param {Object} props - コンポーネントのプロパティ
+ * @param {number} [props.cx=200] - 円の中心のX座標
+ * @param {number} [props.cy=150] - 円の中心のY座標
+ * @returns {JSX.Element} 円を描画するSVGコンポーネント
  */
 export function Knock60({ cx = 200, cy = 150 }) {
   return (
