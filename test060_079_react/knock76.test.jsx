@@ -12,7 +12,7 @@ describe('Knock76 React test', () => {
     jest.useRealTimers();
   });
 
-  it('renders Monte Carlo π calculation visualization', () => {
+  it('renders Monte Carlo π calculation visualization with default behavior', () => {
     expect(() => {
       render(<Knock76 />);
     }).not.toThrow(TrainingSkipError);
@@ -35,5 +35,44 @@ describe('Knock76 React test', () => {
     // Check that pi estimate is displayed
     const piText = document.querySelector('div').textContent;
     expect(piText).toMatch(/π ≈ \d+\.\d{4}/);
+  });
+
+  it('uses custom point generation and notifies on point added', () => {
+    const mockCreatePoint = jest.fn()
+      .mockReturnValueOnce({ x: 0, y: 0 })     // Point at center (inside circle)
+      .mockReturnValueOnce({ x: 200, y: 0 });  // Point outside circle
+    
+    const onPointAdded = jest.fn();
+    
+    render(<Knock76 createPoint={mockCreatePoint} onPointAdded={onPointAdded} />);
+    
+    // Advance timer twice to add two points
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    
+    expect(mockCreatePoint).toHaveBeenCalledTimes(1);
+    expect(onPointAdded).toHaveBeenCalledTimes(1);
+    expect(onPointAdded).toHaveBeenCalledWith(expect.objectContaining({
+      x: 0,
+      y: 0,
+      isInside: true
+    }));
+    
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    
+    expect(mockCreatePoint).toHaveBeenCalledTimes(2);
+    expect(onPointAdded).toHaveBeenCalledTimes(2);
+    expect(onPointAdded).toHaveBeenLastCalledWith(expect.objectContaining({
+      x: 200,
+      y: 0,
+      isInside: false
+    }));
+    
+    // Verify points are rendered
+    const points = document.querySelectorAll('circle');
+    expect(points.length).toBe(3); // Including the main circle
   });
 });

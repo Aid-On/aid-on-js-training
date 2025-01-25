@@ -2,13 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内でモンテカルロ法によるπの計算をシミュレーションします。
- * 300x300の正方形内に半径150pxの円を描き、1000個のランダムな点を生成します。
- * 円の内外の点の比率から πの値を推定し、画面左上に表示します。
- * 点は円内が青、円外が赤で表示され、50msごとに1点ずつ追加されます。
+ * No. 76 モンテカルロ法でπを近似計算
+ * 問題: 300x300の正方形内に半径150pxの円を描き、ランダムな点を生成してπを近似計算するコンポーネントを作成せよ。
+ * 
+ * 実行例:
+ *   - 初期表示: 空の正方形と円が表示される
+ *   - 50msごとに: ランダムな点が1つ追加され、πの近似値が更新される
+ *   - 点の色分け: 円内は青、円外は赤で表示
+ * 
+ * [Tips]
+ * - 円の内外判定には Math.sqrt(x * x + y * y) <= radius を使用
+ * - ランダムな点生成には createPoint プロップを使用すると、テストが容易になる
+ * - 点が追加されるたびに onPointAdded コールバックで通知可能
+ * 
+ * @param {Function} [createPoint] カスタム点生成関数 (x, y を含むオブジェクトを返す)
+ * @param {Function} [onPointAdded] 点が追加された時のコールバック関数
  * @returns {JSX.Element} モンテカルロ法によるπ計算のビジュアライゼーションを持つSVGコンポーネント
  */
-export function Knock76() {
+export function Knock76({ createPoint, onPointAdded }) {
   const [points, setPoints] = useState([]);
   const [piEstimate, setPiEstimate] = useState(0);
   const size = 300;
@@ -17,15 +28,24 @@ export function Knock76() {
   const centerY = 200;
   const maxPoints = 1000;
 
+  const defaultCreatePoint = () => ({
+    x: Math.random() * size - radius,
+    y: Math.random() * size - radius
+  });
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (points.length >= maxPoints) return;
 
-      const x = Math.random() * size - radius;
-      const y = Math.random() * size - radius;
+      const { x, y } = (createPoint || defaultCreatePoint)();
       const isInside = Math.sqrt(x * x + y * y) <= radius;
 
-      setPoints(prev => [...prev, { x, y, isInside }]);
+      const newPoint = { x, y, isInside };
+      setPoints(prev => [...prev, newPoint]);
+      
+      if (onPointAdded) {
+        onPointAdded(newPoint);
+      }
       
       const insideCount = points.filter(p => p.isInside).length + (isInside ? 1 : 0);
       const totalCount = points.length + 1;
