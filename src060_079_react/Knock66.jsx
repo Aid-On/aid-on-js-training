@@ -6,7 +6,7 @@ import './index.css';
  * @returns {JSX.Element} SVG component with mouse-following circle
  */
 export function Knock66() {
-  const [position, setPosition] = useState({ x: 300, y: 200 });
+  const [position, setPosition] = useState({ x: 180, y: 150 });
   const radius = 30;
 
   const handleMouseMove = (e) => {

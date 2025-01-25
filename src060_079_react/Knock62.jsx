@@ -6,16 +6,16 @@ import './index.css';
  * @returns {JSX.Element} Interactive SVG component with movable circle
  */
 export function Knock62() {
-  const [circleX, setCircleX] = useState(300);
+  const [circleX, setCircleX] = useState(-270);
   const circleY = 200;
   const radius = 30;
 
   const handleKeyDown = (e) => {
-    const step = 10;
-    if (e.key === 'ArrowLeft' && circleX > radius + step) {
-      setCircleX(prev => prev - step);
-    } else if (e.key === 'ArrowRight' && circleX < 600 - radius - step) {
-      setCircleX(prev => prev + step);
+    e.preventDefault(); // Prevent default scroll behavior
+    if (e.key === 'ArrowLeft') {
+      setCircleX(x => x - 10);
+    } else if (e.key === 'ArrowRight') {
+      setCircleX(x => x + 10);
     }
   };
 

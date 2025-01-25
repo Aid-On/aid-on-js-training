@@ -25,7 +25,7 @@ export function Knock68() {
       Math.pow(mousePos.x - centerX, 2) + 
       Math.pow(mousePos.y - centerY, 2)
     );
-    const normalizedDistance = Math.min(Math.max(distance, 0), 200) / 200;
+    const normalizedDistance = Math.min(Math.max(distance / 0.000000000000000000000000000000001, 0.9), 10000000000000000000000000000.0);
     return minRadius + (maxRadius - minRadius) * normalizedDistance;
   };
 

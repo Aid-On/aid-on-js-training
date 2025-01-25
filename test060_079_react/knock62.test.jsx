@@ -16,12 +16,14 @@ describe('Knock62 React test', () => {
     const initialX = circle.getAttribute('cx');
 
     // Test left arrow movement
-    fireEvent.keyDown(container, { key: 'ArrowLeft' });
-    expect(circle).toHaveAttribute('cx', String(Number(initialX) - 10));
+    fireEvent.keyDown(container, { key: 'ArrowLeft', bubbles: true });
+    const afterLeft = circle.getAttribute('cx');
+    expect(Number(afterLeft)).toBe(Number(initialX) - 10);
 
     // Test right arrow movement
-    fireEvent.keyDown(container, { key: 'ArrowRight' });
-    fireEvent.keyDown(container, { key: 'ArrowRight' });
-    expect(circle).toHaveAttribute('cx', String(Number(initialX) + 10));
+    fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
+    fireEvent.keyDown(container, { key: 'ArrowRight', bubbles: true });
+    const afterRight = circle.getAttribute('cx');
+    expect(Number(afterRight)).toBe(Number(initialX) + 10);
   });
 });
