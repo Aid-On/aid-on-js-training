@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "npx babel src --out-dir dist",
-    "test": "npx jest test/",
+    "test": "npx jest \"test/|test060_079_react/\"",
     "test1": "npx jest test000_019/",
     "test:watch": "npx jest --watch"
   },
