@@ -11,10 +11,11 @@ export function Knock62() {
   const radius = 30;
 
   const handleKeyDown = (e) => {
-    if (e.key === 'ArrowLeft' && circleX > radius) {
-      setCircleX(prev => prev - 10);
-    } else if (e.key === 'ArrowRight' && circleX < 600 - radius) {
-      setCircleX(prev => prev + 10);
+    const step = 10;
+    if (e.key === 'ArrowLeft' && circleX > radius + step) {
+      setCircleX(prev => prev - step);
+    } else if (e.key === 'ArrowRight' && circleX < 600 - radius - step) {
+      setCircleX(prev => prev + step);
     }
   };
 

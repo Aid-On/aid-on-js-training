@@ -11,12 +11,9 @@ export function Knock66() {
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setPosition({ 
-      x: Math.max(radius, Math.min(600 - radius, x)),
-      y: Math.max(radius, Math.min(400 - radius, y))
-    });
+    const x = Math.max(radius, Math.min(600 - radius, e.clientX - rect.left));
+    const y = Math.max(radius, Math.min(400 - radius, e.clientY - rect.top));
+    setPosition({ x, y });
   };
 
   return (

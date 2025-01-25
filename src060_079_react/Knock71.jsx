@@ -10,13 +10,12 @@ export function Knock71() {
   const circleRadius = 20;
 
   const handleClick = (e) => {
+    if (circles.length >= 10) return;
+    
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
-    if (circles.length < 10) {
-      setCircles([...circles, { x, y }]);
-    }
+    setCircles(prev => [...prev, { x, y }]);
   };
 
   return (

@@ -15,11 +15,11 @@ export function Knock64() {
     const timer = setInterval(() => {
       setPosition(prev => {
         const nextX = prev.x + speed * direction;
-        if (nextX + radius >= 600) {
+        if (nextX + radius > 600) {
           setDirection(-1);
-          return { ...prev, x: 600 - radius };
+          return { ...prev, x: 530 };
         }
-        if (nextX - radius <= 0) {
+        if (nextX - radius < 0) {
           setDirection(1);
           return { ...prev, x: radius };
         }

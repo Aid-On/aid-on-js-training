@@ -17,10 +17,7 @@ export function Knock72() {
     
     setPositions(prev => {
       const newPositions = [...prev, { x, y }];
-      if (newPositions.length > maxTrailLength) {
-        return newPositions.slice(-maxTrailLength);
-      }
-      return newPositions;
+      return newPositions.slice(-maxTrailLength);
     });
   };
 
