@@ -2,28 +2,47 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内で波状に動く10個の円を描画します。
- * 円は半径20pxで、50pxの振幅と0.1の周波数で波を描きます。
- * アニメーションは50msごとに更新され、波の位相が0.1ずつ変化します。
+ * No.69 波状に動く円のアニメーション
+ * 問題: 600x400のSVGキャンバス内で、複数の円が時間経過とともに波状に動くアニメーションを実装せよ。
+ * 
+ * 実行例:
+ *   - 初期表示: 指定された数の円が水平に並ぶ
+ *   - アニメーション: 各円が正弦波に沿って上下に動く
+ *   - カスタマイズ: circleCount, amplitude, frequency などのパラメータで動きを調整可能
+ * 
+ * [Tips]
+ *   - Math.sin() を使用して波の動きを計算
+ *   - useEffect と setInterval でアニメーションを制御
+ *   - 位相差(phaseShift)を使って円同士の動きをずらす
+ * 
+ * @param {number} [circleCount=10] 表示する円の数
+ * @param {number} [amplitude=50] 波の振幅(px)
+ * @param {number} [frequency=0.1] 波の周波数
+ * @param {number} [phaseShift=0.5] 円同士の位相差
+ * @param {number} [intervalMs=50] アニメーション更新間隔(ms)
  * @returns {JSX.Element} 波状に動く円のアニメーションを持つSVGコンポーネント
  */
-export function Knock69() {
+export function Knock69({
+  circleCount = 10,
+  amplitude = 50,
+  frequency = 0.1,
+  phaseShift = 0.5,
+  intervalMs = 50
+}) {
   const [time, setTime] = useState(0);
-  const circleCount = 10;
   const baseY = 200;
-  const amplitude = 50;
-  const frequency = 0.1;
-  const phaseShift = 0.5;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTime(t => t + 0.1);
-    }, 50);
+      setTime(t => t + frequency);
+    }, intervalMs);
     return () => clearInterval(timer);
-  }, []);
+  }, [frequency, intervalMs]);
 
   const circles = Array(circleCount).fill(null).map((_, index) => {
-    const x = 100 + index * 50;
+    // Distribute circles evenly across the width, leaving margin on both sides
+    const spacing = (500 - 100) / (circleCount - 1); // 500px usable width (600px - 2*50px margin)
+    const x = 50 + index * spacing; // Start from 50px margin
     const y = baseY + Math.sin(time + index * phaseShift) * amplitude;
     return { x, y };
   });
@@ -40,6 +59,7 @@ export function Knock69() {
             fill="white"
             stroke="black"
             strokeWidth="1"
+            data-testid={`wave-circle-${index}`}
           />
         ))}
       </svg>
