@@ -2,26 +2,50 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内で拡大縮小する6つの円を描画します。
- * 中心座標(300,200)を中心に、半径80pxの円周上に配置されます。
- * 各円の基本半径は20pxで、±30%の範囲でサイズが変化します。
- * アニメーションは50msごとに更新され、位相が0.1ずつ変化します。
+ * No. 75 アニメーションする円のパターン
+ * 問題: 600x400のSVGキャンバス内で、6つの円が拡大縮小するアニメーションを作成せよ。
+ * 実行例:
+ *   - 初期表示: 中心座標(300,200)を中心に、半径80pxの円周上に6つの円が配置される
+ *   - アニメーション: 各円が基本半径20pxを基準に±30%の範囲で拡大縮小する
+ *   - タイミング: 50msごとに更新され、位相が0.1ずつ変化する
+ *
+ * [Tips]
+ * - React.useState でアニメーションの時間を管理する
+ * - useEffect で setInterval を使用してアニメーションを制御
+ * - 円の座標計算には Math.cos と Math.sin を使用
+ * - スケールの計算には Math.sin を使用して滑らかな拡大縮小を実現
+ *
+ * @param {Object} props コンポーネントのプロパティ
+ * @param {number} [props.animationInterval=50] アニメーションの更新間隔(ms)
+ * @param {number} [props.circleCount=6] 描画する円の数
+ * @param {(time: number) => void} [props.onAnimationTick] アニメーションの各更新時に呼び出されるコールバック
  * @returns {JSX.Element} 拡大縮小する円のパターンを持つSVGコンポーネント
  */
-export function Knock75() {
+export function Knock75({
+  animationInterval = 50,
+  circleCount = 6,
+  onAnimationTick
+}) {
   const [time, setTime] = useState(0);
   const centerX = 300;
   const centerY = 200;
   const baseRadius = 20;
-  const circleCount = 6;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTime(t => t + 0.1);
-    }, 50);
+      const newTime = time + 0.1;
+      setTime(newTime);
+      if (onAnimationTick) {
+        onAnimationTick(newTime);
+      }
+    }, animationInterval);
     return () => clearInterval(timer);
-  }, []);
+  }, [time, animationInterval, onAnimationTick]);
 
+  /**
+   * 円の位置とサイズを計算する
+   * @returns {{ x: number, y: number, radius: number }[]} 各円の座標と半径
+   */
   const getCircles = () => {
     return Array(circleCount).fill(null).map((_, index) => {
       const angle = (2 * Math.PI * index) / circleCount;
