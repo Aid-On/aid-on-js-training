@@ -6,7 +6,7 @@ import './index.css';
  * @returns {JSX.Element} SVG component with click-to-add circles
  */
 export function Knock71() {
-  const maxCircles = 10;
+  const maxCircles = 5;
   const [circles, setCircles] = useState([]);
   // Initialize with empty array
   const circleRadius = 20;

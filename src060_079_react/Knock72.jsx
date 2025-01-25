@@ -16,10 +16,11 @@ export function Knock72() {
     const y = e.clientY - rect.top;
     
     setPositions(prev => {
-      if (prev.length >= maxTrailLength) {
-        return [...prev.slice(1), { x, y }];
+      const newPositions = [...prev, { x, y }];
+      if (newPositions.length > maxTrailLength) {
+        return newPositions.slice(-maxTrailLength);
       }
-      return [...prev, { x, y }];
+      return newPositions;
     });
   };
 
