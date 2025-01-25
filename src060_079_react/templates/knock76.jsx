@@ -1,32 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import { TrainingSkipError } from '../../src/common/TrainingSkipError';
 import './index.css';
 
 /**
  * Draw a Monte Carlo simulation for calculating π
  * @returns {JSX.Element} SVG component with Monte Carlo π calculation visualization
- * 
- * ヒント:
- * 1. 状態管理：
- *    const [points, setPoints] = useState([]);
- *    const [piEstimate, setPiEstimate] = useState(0);
- * 
- * 2. モンテカルロ法の実装：
- *    - 正方形内にランダムな点を生成
- *    - 円の中に入っている点をカウント
- *    - π ≈ 4 * (円の中の点の数) / (全体の点の数)
- * 
- * 3. 点の生成：
- *    - x = Math.random() * size - radius
- *    - y = Math.random() * size - radius
- *    - isInside = Math.sqrt(x*x + y*y) <= radius
- * 
- * 4. 描画要素：
- *    - 正方形（基準領域）
- *    - 円（π計算用）
- *    - 点（青: 円の中、赤: 円の外）
- *    - πの推定値を表示するテキスト
  */
 export function knock76() {
-  throw new TrainingSkipError();
+  const [points, setPoints] = useState([]);
+  const [piEstimate, setPiEstimate] = useState(0);
+  const size = 300;
+  const radius = size / 2;
+  const centerX = 300;
+  const centerY = 200;
+  const maxPoints = 1000;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (points.length >= maxPoints) return;
+
+      const x = Math.random() * size - radius;
+      const y = Math.random() * size - radius;
+      const isInside = Math.sqrt(x * x + y * y) <= radius;
+
+      setPoints(prev => [...prev, { x, y, isInside }]);
+      
+      const insideCount = points.filter(p => p.isInside).length + (isInside ? 1 : 0);
+      const totalCount = points.length + 1;
+      setPiEstimate((4 * insideCount) / totalCount);
+    }, 50);
+    return () => clearInterval(timer);
+  }, [points]);
+
+  return (
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
+      <div className="absolute top-2 left-2 text-sm">π ≈ {piEstimate.toFixed(4)}</div>
+      <svg width="600" height="400">
+        <circle 
+          cx={centerX} 
+          cy={centerY} 
+          r={radius}
+          fill="none"
+          stroke="black"
+          strokeWidth="1"
+        />
+        <rect 
+          x={centerX - radius} 
+          y={centerY - radius}
+          width={size}
+          height={size}
+          fill="none"
+          stroke="black"
+          strokeWidth="1"
+        />
+        {points.map((point, index) => (
+          <circle 
+            key={index}
+            cx={centerX + point.x}
+            cy={centerY + point.y}
+            r="2"
+            fill={point.isInside ? "blue" : "red"}
+          />
+        ))}
+      </svg>
+    </div>
+  );
 }

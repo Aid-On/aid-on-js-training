@@ -1,27 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import { TrainingSkipError } from '../../src/common/TrainingSkipError';
 import './index.css';
 
 /**
  * Draw a circle that bounces horizontally between window edges
  * @returns {JSX.Element} SVG component with bouncing circle animation
- * 
- * ヒント:
- * 1. 必要な状態：
- *    - 位置: const [position, setPosition] = useState({ x: 30, y: 200 });
- *    - 方向: const [direction, setDirection] = useState(1); // 1=右, -1=左
- * 
- * 2. アニメーションのロジック：
- *    - setInterval で定期的に位置を更新
- *    - 端に到達したら方向を反転（direction を -1 倍）
- * 
- * 3. 跳ね返りの条件：
- *    - 右端: x + radius >= 600
- *    - 左端: x - radius <= 0
- * 
- * 4. クリーンアップを忘れずに：
- *    return () => clearInterval(timer);
  */
 export function knock64() {
-  throw new TrainingSkipError();
+  const [position, setPosition] = useState({ x: 30, y: 200 });
+  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
+  const radius = 30;
+  const speed = 5;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPosition(prev => {
+        const nextX = prev.x + speed * direction;
+        if (nextX + radius >= 600) {
+          setDirection(-1);
+          return { ...prev, x: 600 - radius };
+        }
+        if (nextX - radius <= 0) {
+          setDirection(1);
+          return { ...prev, x: radius };
+        }
+        return { ...prev, x: nextX };
+      });
+    }, 50);
+    return () => clearInterval(timer);
+  }, [direction]);
+
+  return (
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
+      <svg width="600" height="400">
+        <circle 
+          cx={position.x} 
+          cy={position.y} 
+          r={radius}
+          fill="white"
+          stroke="black"
+          strokeWidth="1"
+        />
+      </svg>
+    </div>
+  );
 }
