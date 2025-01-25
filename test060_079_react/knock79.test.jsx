@@ -4,7 +4,7 @@ import { Knock79 } from '../src060_079_react/Knock79';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
 describe('Knock79 React test', () => {
-  it('renders Mandelbrot set visualization', () => {
+  it('renders Mandelbrot set visualization with default parameters', () => {
     expect(() => {
       render(<Knock79 />);
     }).not.toThrow(TrainingSkipError);
@@ -21,5 +21,32 @@ describe('Knock79 React test', () => {
     // Verify that points have different colors (hsl values)
     const colors = new Set(Array.from(points).map(p => p.getAttribute('fill')));
     expect(colors.size).toBeGreaterThan(1);
+  });
+
+  it('accepts custom dimensions', () => {
+    render(<Knock79 width={300} height={200} />);
+    
+    const rect = document.querySelector('rect');
+    expect(rect).toHaveAttribute('width', '300');
+    expect(rect).toHaveAttribute('height', '200');
+
+    const svg = document.querySelector('svg');
+    expect(svg).toHaveAttribute('width', '300');
+    expect(svg).toHaveAttribute('height', '200');
+  });
+
+  it('renders with custom sampling rate and iterations', () => {
+    render(<Knock79 samplingRate={4} maxIterations={50} />);
+    
+    // With larger sampling rate, we should have fewer points
+    const points = document.querySelectorAll('circle');
+    const defaultPoints = document.querySelectorAll('circle').length;
+    
+    // Re-render with default sampling rate to compare
+    render(<Knock79 />);
+    const pointsWithDefaultSampling = document.querySelectorAll('circle').length;
+    
+    // Should have fewer points with larger sampling rate
+    expect(points.length).toBeLessThan(pointsWithDefaultSampling);
   });
 });
