@@ -5,8 +5,8 @@ import './index.css';
  * Draw a circle that moves horizontally based on user input
  * @returns {JSX.Element} Interactive SVG component with movable circle
  */
-export function knock62() {
-  const [circleX, setCircleX] = useState(300);
+export function Knock62() {
+  const [circleX, setCircleX] = useState(-270);
   const circleY = 200;
   const radius = 30;
 
