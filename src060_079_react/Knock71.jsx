@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw circles that appear at clicked positions in a 600x400 window.
- * Adds white circles with black border at clicked locations.
- * Maximum of 5 circles can be displayed at once.
- * @returns {JSX.Element} SVG component with click-to-add circles
+ * 600x400のウィンドウ内でクリックした位置に円を表示します。
+ * クリックした場所に白色で黒い枠線の円を追加します。
+ * 最大5個までの円を同時に表示できます。
+ * @returns {JSX.Element} クリックで円を追加できるSVGコンポーネント
  */
 export function Knock71() {
   const maxCircles = 5;

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that bounces horizontally in a 600x400 window.
- * Circle has radius 30px and bounces at window edges (x=470 for right edge).
- * Animation updates every 50ms with speed of 5px per frame.
- * @returns {JSX.Element} SVG component with bouncing circle animation
+ * 600x400のウィンドウ内で水平に跳ね返る円を描画します。
+ * 円の半径は30pxで、ウィンドウの端（右端はx=470）で跳ね返ります。
+ * アニメーションは50msごとに更新され、1フレームあたり5pxの速度で移動します。
+ * @returns {JSX.Element} 跳ね返る円のアニメーションを持つSVGコンポーネント
  */
 export function Knock64() {
   const [position, setPosition] = useState({ x: 30, y: 200 });

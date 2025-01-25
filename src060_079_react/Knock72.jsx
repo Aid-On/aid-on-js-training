@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw circles that follow mouse movement with trail effect in a 600x400 window.
- * Maintains a trail of 10 circles with increasing opacity (0.3 to 1.0).
- * Each circle has radius 15px and follows mouse position.
- * @returns {JSX.Element} SVG component with mouse trail animation
+ * 600x400のウィンドウ内でマウスの動きに追従する軌跡効果のある円を描画します。
+ * 不透明度が増加（0.3から1.0）する10個の円で軌跡を表現します。
+ * 各円の半径は15pxで、マウスの位置に追従します。
+ * @returns {JSX.Element} マウスの軌跡アニメーションを持つSVGコンポーネント
  */
 export function Knock72() {
   const [positions, setPositions] = useState([]);

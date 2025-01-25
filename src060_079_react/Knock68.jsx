@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that changes size based on mouse distance in a 600x400 window.
- * Circle is centered at (300, 200) with radius varying between 20px and 100px.
- * Size changes based on mouse distance from center, normalized to 200px range.
- * @returns {JSX.Element} SVG component with interactive circle
+ * 600x400のウィンドウ内でマウスとの距離に応じてサイズが変化する円を描画します。
+ * 円は中心(300, 200)に固定され、半径は20pxから100pxの間で変化します。
+ * サイズは中心からのマウスの距離（200pxで正規化）に基づいて変化します。
+ * @returns {JSX.Element} サイズが変化する円を持つSVGコンポーネント
  */
 export function Knock68() {
   const [mousePos, setMousePos] = useState({ x: 300, y: 200 });
