@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内に10x10のグリッド状の円を描画します。
- * 各円の半径は15pxで、40pxの間隔で配置されます。
- * 市松模様のように、隣り合う円が白と黒で交互に配色されます。
- * @returns {JSX.Element} 市松模様状の円のグリッドを持つSVGコンポーネント
+ * No.70 市松模様の円グリッドを描画
+ * 問題: 600x400の領域に、gridSize x gridSize の円を描画。
+ *       円の色は白黒が交互になるように設定せよ。
+ *       circleRadius や spacing などのパラメータを適切に調整し、
+ *       テストで検証しやすいようコンポーネントの引数として設定すること。
+ *
+ * [実装のポイント]
+ * - グリッドサイズは引数で指定可能（デフォルト: 10x10）
+ * - 円の半径と間隔も引数で調整可能
+ * - 市松模様は行と列の和の偶奇で判定
+ *
+ * @param {number} [gridSize=10] 描画する円グリッドの行数・列数
+ * @param {number} [circleRadius=15] 各円の半径
+ * @param {number} [spacing=40] 円と円の間隔(px)
+ * @returns {JSX.Element} 市松模様状の円を描画したdiv要素
  */
-export function Knock70() {
-  const gridSize = 10;
-  const circleRadius = 15;
-  const spacing = 40;
+export function Knock70({
+  gridSize = 10,
+  circleRadius = 15,
+  spacing = 40
+}) {
   const startX = 100;
   const startY = 50;
 
