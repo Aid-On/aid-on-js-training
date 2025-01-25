@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that follows mouse movement
+ * Draw a circle that follows mouse movement in a 600x400 window.
+ * Circle has radius 30px and stays within window bounds.
+ * Initial position is at (180, 150).
  * @returns {JSX.Element} SVG component with mouse-following circle
  */
 export function Knock66() {

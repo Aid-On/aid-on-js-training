@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 /**
- * Draw a circle that bounces horizontally between window edges
+ * Draw a circle that bounces horizontally in a 600x400 window.
+ * Circle has radius 30px and bounces at window edges (x=470 for right edge).
+ * Animation updates every 50ms with speed of 5px per frame.
  * @returns {JSX.Element} SVG component with bouncing circle animation
  */
 export function Knock64() {
