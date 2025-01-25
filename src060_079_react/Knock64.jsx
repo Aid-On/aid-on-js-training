@@ -17,7 +17,7 @@ export function Knock64() {
         const nextX = prev.x + speed * direction;
         if (nextX + radius > 600) {
           setDirection(-1);
-          return { ...prev, x: 500 };
+          return { ...prev, x: 470 };
         }
         if (nextX - radius < 0) {
           setDirection(1);
