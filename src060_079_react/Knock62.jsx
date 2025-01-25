@@ -1,25 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './index.css';
 
 /**
- * 600x400のウィンドウ内で左右の矢印キーで水平に移動する円を描画します。
- * 円の半径は30pxで、キー入力ごとに10pxずつ移動します。
- * 初期位置はx=-270で、キー入力で左右に移動できます。
+ * No. 62 矢印キーで円を左右に移動
+ * 問題: 600x400のSVGキャンバス内で、左右の矢印キーを使って円を水平方向へ動かすコンポーネントを作成せよ。
+ * 実行例:
+ *   - 初期表示: x座標=-270に円(半径30px)が表示される
+ *   - 左矢印キー: 円が左に10px移動 (例: -270 → -280)
+ *   - 右矢印キー: 円が右に10px移動 (例: -270 → -260)
+ *
+ * [Tips]
+ * - React.useState で円のx座標を管理する
+ * - キーボードイベントの取得には onKeyDown または addEventListener を使用
+ * - キー入力は e.key で判定 ('ArrowLeft'/'ArrowRight')
+ *
+ * @param {number} [initialX=-270] 円の初期x座標
+ * @param {number} [moveDistance=10] 1回の移動距離(px)
+ * @param {Function} [onMoveLeft] 左移動時のカスタムハンドラ
+ * @param {Function} [onMoveRight] 右移動時のカスタムハンドラ
  * @returns {JSX.Element} キー操作で移動可能な円を持つSVGコンポーネント
  */
-export function Knock62() {
-  const [circleX, setCircleX] = useState(-270);
+export function Knock62({
+  initialX = -270,
+  onMoveLeft,
+  onMoveRight,
+  moveDistance = 10
+}) {
+  const [circleX, setCircleX] = useState(initialX);
   const circleY = 200;
   const radius = 30;
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     e.preventDefault(); // Prevent default scroll behavior
     if (e.key === 'ArrowLeft') {
-      setCircleX(x => x - 10);
+      if (onMoveLeft) {
+        onMoveLeft();
+      }
+      setCircleX(x => x - moveDistance);
     } else if (e.key === 'ArrowRight') {
-      setCircleX(x => x + 10);
+      if (onMoveRight) {
+        onMoveRight();
+      }
+      setCircleX(x => x + moveDistance);
     }
-  };
+  }, [moveDistance, onMoveLeft, onMoveRight]);
+
+  useEffect(() => {
+    // Add event listener to document to ensure it catches all keyboard events
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <div 
