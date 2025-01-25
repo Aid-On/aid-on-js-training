@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock64 } from '../src060_079_react/knock64';
+import { Knock64 } from '../src060_079_react/Knock64';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock64 React test', () => {
+describe('Knock64 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock64 React test', () => {
 
   it('renders a bouncing circle', () => {
     expect(() => {
-      render(<knock64 />);
+      render(<Knock64 />);
     }).not.toThrow(TrainingSkipError);
 
     const circle = document.querySelector('circle');
@@ -31,7 +31,7 @@ describe('knock64 React test', () => {
   });
 
   it('bounces off window edges', async () => {
-    render(<knock64 />);
+    render(<Knock64 />);
     const circle = document.querySelector('circle');
     
     // Move to right edge

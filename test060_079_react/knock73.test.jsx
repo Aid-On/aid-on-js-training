@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock73 } from '../src060_079_react/knock73';
+import { Knock73 } from '../src060_079_react/Knock73';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock73 React test', () => {
+describe('Knock73 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock73 React test', () => {
 
   it('renders multiple bouncing circles', () => {
     expect(() => {
-      render(<knock73 />);
+      render(<Knock73 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');
@@ -39,7 +39,7 @@ describe('knock73 React test', () => {
   });
 
   it('keeps circles within bounds', () => {
-    render(<knock73 />);
+    render(<Knock73 />);
     const circles = document.querySelectorAll('circle');
     const radius = 20;
 

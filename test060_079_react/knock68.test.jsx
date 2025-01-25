@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { knock68 } from '../src060_079_react/knock68';
+import { Knock68 } from '../src060_079_react/Knock68';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock68 React test', () => {
+describe('Knock68 React test', () => {
   it('renders a circle that changes size based on mouse distance', () => {
     expect(() => {
-      render(<knock68 />);
+      render(<Knock68 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock76 } from '../src060_079_react/knock76';
+import { Knock76 } from '../src060_079_react/Knock76';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock76 React test', () => {
+describe('Knock76 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock76 React test', () => {
 
   it('renders Monte Carlo π calculation visualization', () => {
     expect(() => {
-      render(<knock76 />);
+      render(<Knock76 />);
     }).not.toThrow(TrainingSkipError);
 
     // Check initial state

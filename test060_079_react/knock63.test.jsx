@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock63 } from '../src060_079_react/knock63';
+import { Knock63 } from '../src060_079_react/Knock63';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock63 React test', () => {
+describe('Knock63 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock63 React test', () => {
 
   it('renders a circle moving in a circular path', () => {
     expect(() => {
-      render(<knock63 />);
+      render(<Knock63 />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');

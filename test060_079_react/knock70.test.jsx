@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { knock70 } from '../src060_079_react/knock70';
+import { Knock70 } from '../src060_079_react/Knock70';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock70 React test', () => {
+describe('Knock70 React test', () => {
   it('renders a 10x10 grid of alternating colored circles', () => {
     expect(() => {
-      render(<knock70 />);
+      render(<Knock70 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');

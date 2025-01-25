@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { knock72 } from '../src060_079_react/knock72';
+import { Knock72 } from '../src060_079_react/Knock72';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock72 React test', () => {
+describe('Knock72 React test', () => {
   it('creates trail effect on mouse movement', () => {
     expect(() => {
-      render(<knock72 />);
+      render(<Knock72 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');

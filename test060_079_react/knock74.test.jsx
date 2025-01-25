@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { knock74 } from '../src060_079_react/knock74';
+import { Knock74 } from '../src060_079_react/Knock74';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock74 React test', () => {
+describe('Knock74 React test', () => {
   it('renders a spiral pattern of circles', () => {
     expect(() => {
-      render(<knock74 />);
+      render(<Knock74 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');

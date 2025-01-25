@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { knock77 } from '../src060_079_react/knock77';
+import { Knock77 } from '../src060_079_react/Knock77';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock77 React test', () => {
+describe('Knock77 React test', () => {
   it('renders Sierpinski triangle fractal', () => {
     expect(() => {
-      render(<knock77 />);
+      render(<Knock77 />);
     }).not.toThrow(TrainingSkipError);
 
     const points = document.querySelectorAll('circle');

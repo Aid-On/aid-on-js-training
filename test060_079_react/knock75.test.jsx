@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock75 } from '../src060_079_react/knock75';
+import { Knock75 } from '../src060_079_react/Knock75';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock75 React test', () => {
+describe('Knock75 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock75 React test', () => {
 
   it('renders expanding/contracting circles in a pattern', () => {
     expect(() => {
-      render(<knock75 />);
+      render(<Knock75 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');

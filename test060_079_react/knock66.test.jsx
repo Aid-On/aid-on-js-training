@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { knock66 } from '../src060_079_react/knock66';
+import { Knock66 } from '../src060_079_react/Knock66';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock66 React test', () => {
+describe('Knock66 React test', () => {
   it('renders a circle that follows mouse movement', () => {
     expect(() => {
-      render(<knock66 />);
+      render(<Knock66 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');
@@ -28,7 +28,7 @@ describe('knock66 React test', () => {
   });
 
   it('keeps circle within bounds', () => {
-    render(<knock66 />);
+    render(<Knock66 />);
     const container = document.querySelector('div');
     const circle = document.querySelector('circle');
     const radius = Number(circle.getAttribute('r'));

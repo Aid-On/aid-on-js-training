@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { knock62 } from '../src060_079_react/knock62';
+import { Knock62 } from '../src060_079_react/Knock62';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock62 React test', () => {
+describe('Knock62 React test', () => {
   it('renders a movable circle and responds to keyboard input', () => {
     expect(() => {
-      render(<knock62 />);
+      render(<Knock62 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');

@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { knock78 } from '../src060_079_react/knock78';
+import { Knock78 } from '../src060_079_react/Knock78';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock78 React test', () => {
+describe('Knock78 React test', () => {
   it('renders binary tree fractal', () => {
     expect(() => {
-      render(<knock78 />);
+      render(<Knock78 />);
     }).not.toThrow(TrainingSkipError);
 
     const lines = document.querySelectorAll('line');

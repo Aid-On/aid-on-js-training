@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { knock61 } from '../src060_079_react/knock61';
+import { Knock61 } from '../src060_079_react/Knock61';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock61 React test', () => {
+describe('Knock61 React test', () => {
   it('renders a square with inscribed circle', () => {
     expect(() => {
-      render(<knock61 />);
+      render(<Knock61 />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');

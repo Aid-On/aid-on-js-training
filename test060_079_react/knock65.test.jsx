@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { knock65 } from '../src060_079_react/knock65';
+import { Knock65 } from '../src060_079_react/Knock65';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock65 React test', () => {
+describe('Knock65 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('knock65 React test', () => {
 
   it('renders a diagonally bouncing circle', () => {
     expect(() => {
-      render(<knock65 />);
+      render(<Knock65 />);
     }).not.toThrow(TrainingSkipError);
 
     const circle = document.querySelector('circle');
@@ -33,7 +33,7 @@ describe('knock65 React test', () => {
   });
 
   it('stays within window bounds', () => {
-    render(<knock65 />);
+    render(<Knock65 />);
     const circle = document.querySelector('circle');
     
     // Run animation for a while

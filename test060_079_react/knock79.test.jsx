@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { knock79 } from '../src060_079_react/knock79';
+import { Knock79 } from '../src060_079_react/Knock79';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock79 React test', () => {
+describe('Knock79 React test', () => {
   it('renders Mandelbrot set visualization', () => {
     expect(() => {
-      render(<knock79 />);
+      render(<Knock79 />);
     }).not.toThrow(TrainingSkipError);
 
     const rect = document.querySelector('rect');

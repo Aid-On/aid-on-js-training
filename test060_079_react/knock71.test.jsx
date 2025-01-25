@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { knock71 } from '../src060_079_react/knock71';
+import { Knock71 } from '../src060_079_react/Knock71';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('knock71 React test', () => {
+describe('Knock71 React test', () => {
   it('adds circles on click up to maximum limit', () => {
     expect(() => {
-      render(<knock71 />);
+      render(<Knock71 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');
