@@ -55,7 +55,7 @@ export function Knock062({
 
   return (
     <div 
-      className="w-[600px] h-[400px] border border-gray-300 relative bg-white focus:outline-none" 
+      className="w-[600px] h-[400px] border border-gray-300 relative bg-white focus:outline-none flex justify-center items-center" 
       tabIndex={0}
       onKeyDown={handleKeyDown}
     >

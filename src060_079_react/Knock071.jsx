@@ -40,7 +40,7 @@ export function Knock071({ maxCircles = 5, circleRadius = 20, onCircleAdd }) {
   };
 
   return (
-    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white cursor-pointer">
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white cursor-pointer flex justify-center items-center">
       <svg width="600" height="400" onClick={handleClick} data-testid="canvas">
         {circles.map((pos, index) => (
           <circle

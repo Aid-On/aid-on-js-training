@@ -104,7 +104,7 @@ export function Knock077({
   }, [depth, size, onPointsGenerated]);
   
   return (
-    <div className="w-[500px] h-[500px] border border-gray-300 relative bg-white">
+    <div className="w-[500px] h-[500px] border border-gray-300 relative bg-white flex justify-center items-center">
       <svg width={500} height={500} data-testid="container">
         {points.map((point, index) => (
           <circle
