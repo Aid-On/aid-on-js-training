@@ -20,11 +20,13 @@ import "./index.css";
  * @param {Function} [onMoveRight] 右移動時のカスタムハンドラ
  * @returns {JSX.Element} キー操作で移動可能な円を持つSVGコンポーネント
  */
+import React, { useState, useCallback, useEffect } from "react";
+
 export function Knock062({
-  initialX = -270,
+  initialX = 300,
+  moveDistance = 10,
   onMoveLeft,
   onMoveRight,
-  moveDistance = 10,
 }) {
   const [circleX, setCircleX] = useState(initialX);
   const circleY = 200;
@@ -32,24 +34,18 @@ export function Knock062({
 
   const handleKeyDown = useCallback(
     (e) => {
-      e.preventDefault(); // Prevent default scroll behavior
       if (e.key === "ArrowLeft") {
-        if (onMoveLeft) {
-          onMoveLeft();
-        }
-        setCircleX((x) => x - moveDistance);
+        setCircleX((x) => Math.max(x - moveDistance, 0)); // 左端で止まる
+        if (onMoveLeft) onMoveLeft();
       } else if (e.key === "ArrowRight") {
-        if (onMoveRight) {
-          onMoveRight();
-        }
-        setCircleX((x) => x + moveDistance);
+        setCircleX((x) => Math.min(x + moveDistance, 600)); // 右端で止まる
+        if (onMoveRight) onMoveRight();
       }
     },
     [moveDistance, onMoveLeft, onMoveRight]
   );
 
   useEffect(() => {
-    // Add event listener to document to ensure it catches all keyboard events
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -57,11 +53,7 @@ export function Knock062({
   }, [handleKeyDown]);
 
   return (
-    <div
-      className="w-[600px] h-[400px] border border-gray-300 relative bg-white focus:outline-none flex justify-center items-center"
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-    >
+    <div className="w-[600px] h-[400px] border border-gray-300 bg-white flex justify-center items-center">
       <svg width="600" height="400">
         <circle
           cx={circleX}
