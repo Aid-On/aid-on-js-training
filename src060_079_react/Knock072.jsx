@@ -16,8 +16,10 @@ export function Knock072({
 }) {
   const containerRef = useRef(null);
   // Initialize with maxTrailLength positions at center
-  // Start with empty positions array, will fill up to maxTrailLength on mouse movement
-  const [positions, setPositions] = useState([]);
+  // Initialize with maxTrailLength positions at center
+  const [positions, setPositions] = useState(() =>
+    Array(maxTrailLength).fill({ x: 300, y: 200 })
+  );
 
   const handleMouseMove = useCallback(
     (e) => {
@@ -31,8 +33,7 @@ export function Knock072({
 
       // Update positions array by removing oldest position and adding new one
       setPositions((prev) => {
-        // Add new position and limit to maxTrailLength
-        const newPositions = [...prev, newPos].slice(-maxTrailLength);
+        const newPositions = [...prev.slice(1), newPos];
 
         // Call onMouseMove callback with position and event
         if (onMouseMove) {
