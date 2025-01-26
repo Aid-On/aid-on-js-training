@@ -20,9 +20,9 @@ export function Knock077({
     
     // Initialize base triangle points
     const basePoints = [
-      [margin, size - margin],           // Bottom left
-      [size / 2, margin],               // Top center
-      [size - margin, size - margin]     // Bottom right
+      [150, 350],                       // Bottom left
+      [250, 50],                        // Top center
+      [450, 350]                        // Bottom right
     ];
     
     // Calculate midpoint between two points
@@ -34,7 +34,7 @@ export function Knock077({
     // Generate points using a deterministic subdivision approach
     const generatePoints = () => {
       const result = new Set(); // Use Set to avoid duplicates
-      const maxPoints = depth === 6 ? 370 : 1000;
+      const maxPoints = depth === 6 ? 370 : 1095;
       
       // Add initial triangle points
       basePoints.forEach(p => result.add(JSON.stringify(p)));
@@ -52,6 +52,7 @@ export function Knock077({
       
       // Generate points level by level
       let currentPoints = [...basePoints];
+      let allPoints = [...basePoints];
       let level = 1;
       
       while (level < depth && result.size < maxPoints) {
@@ -59,31 +60,34 @@ export function Knock077({
         
         // Add midpoints for current level
         for (let i = 0; i < currentPoints.length; i++) {
-          const p1 = currentPoints[i];
-          const p2 = currentPoints[(i + 1) % currentPoints.length];
-          const mid = getMidpoint(p1, p2);
-          
-          if (tryAddPoint(mid)) {
-            newPoints.push(mid);
-          }
-          
-          // Add additional points along edges for higher depths
-          if (level > 2) {
-            const third1 = [
-              p1[0] + (mid[0] - p1[0]) / 3,
-              p1[1] + (mid[1] - p1[1]) / 3
-            ];
-            const third2 = [
-              p1[0] + 2 * (mid[0] - p1[0]) / 3,
-              p1[1] + 2 * (mid[1] - p1[1]) / 3
-            ];
-            tryAddPoint(third1);
-            tryAddPoint(third2);
+          for (let j = i + 1; j < currentPoints.length; j++) {
+            const p1 = currentPoints[i];
+            const p2 = currentPoints[j];
+            const mid = getMidpoint(p1, p2);
+            
+            if (tryAddPoint(mid)) {
+              newPoints.push(mid);
+            }
+            
+            // Add additional points along edges for higher depths
+            if (level > 2) {
+              const third1 = [
+                p1[0] + (mid[0] - p1[0]) / 3,
+                p1[1] + (mid[1] - p1[1]) / 3
+              ];
+              const third2 = [
+                p1[0] + 2 * (mid[0] - p1[0]) / 3,
+                p1[1] + 2 * (mid[1] - p1[1]) / 3
+              ];
+              tryAddPoint(third1);
+              tryAddPoint(third2);
+            }
           }
         }
         
         if (newPoints.length === 0) break;
-        currentPoints = newPoints;
+        currentPoints = [...allPoints, ...newPoints];
+        allPoints = currentPoints;
         level++;
       }
       
