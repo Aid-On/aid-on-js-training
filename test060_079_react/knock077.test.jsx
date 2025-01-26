@@ -6,7 +6,7 @@ import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 describe("Knock077 React test", () => {
   it("renders Sierpinski triangle fractal with default depth", () => {
     expect(() => {
-      render(<Knoc077 />);
+      render(<Knock077 />);
     }).not.toThrow(TrainingSkipError);
 
     const points = document.querySelectorAll("circle");
