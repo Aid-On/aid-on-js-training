@@ -1,4 +1,4 @@
-import { knock } from "../src/knock042.js";
+import { knock } from "../src040_059/knock042.js";
 
 describe("No. 42 小さい順?", () => {
   test("入力例1: 昇順の場合 (1, 2, 3)", () => {

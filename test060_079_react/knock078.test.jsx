@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Knock078 } from "../src060_079_react/Knock078";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock78 React test", () => {
+describe("Knock078 React test", () => {
   it("renders binary tree fractal with default parameters", () => {
     expect(() => {
       render(<Knock078 />);
@@ -30,8 +30,8 @@ describe("Knock78 React test", () => {
   });
 
   it("adjusts tree depth based on initialDepth parameter", () => {
-    const { container: deepTree } = render(<Knock78 initialDepth={8} />);
-    const { container: shallowTree } = render(<Knock78 initialDepth={3} />);
+    const { container: deepTree } = render(<Knock078 initialDepth={8} />);
+    const { container: shallowTree } = render(<Knock078 initialDepth={3} />);
 
     const deepLines = deepTree.querySelectorAll("line");
     const shallowLines = shallowTree.querySelectorAll("line");
@@ -41,7 +41,7 @@ describe("Knock78 React test", () => {
 
   it("adjusts branch size based on branchRatio parameter", () => {
     const { container } = render(
-      <Knock78 initialDepth={3} branchRatio={0.5} initialLength={100} />
+      <Knock078 initialDepth={3} branchRatio={0.5} initialLength={100} />
     );
     const lines = Array.from(container.querySelectorAll("line"));
 

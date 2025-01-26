@@ -1,4 +1,4 @@
-import { knock } from "../src/knock053.js";
+import { knock } from "../src040_059/knock053.js";
 
 describe("No. 53 素因数分解", () => {
   test("入力例1: 複数の素因数を持つ数 (12)", () => {

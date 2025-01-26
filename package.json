@@ -5,9 +5,12 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build": "npx babel src --out-dir dist",
-    "test": "npx jest \"test/|test060_079_react/\"",
+    "build": "npx babel src000_019 src020_039 src040_059 src060_079_react --out-dir dist",
+    "test": "npx jest",
     "test1": "npx jest test000_019/",
+    "test2": "npx jest test020_039/",
+    "test3": "npx jest test040_059/",
+    "test4": "npx jest test060_079_react/",
     "test:watch": "npx jest --watch",
     "start": "npx parcel index.html"
   },

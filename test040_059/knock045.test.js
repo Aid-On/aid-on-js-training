@@ -1,4 +1,4 @@
-import { knock } from "../src/knock045.js";
+import { knock } from "../src040_059/knock045.js";
 
 describe("No. 45 タクシー料金", () => {
   test("入力例1: 初乗り料金を超える距離 (2.4km)", () => {

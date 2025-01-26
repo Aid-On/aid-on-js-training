@@ -1,4 +1,4 @@
-import { knock } from "../src/knock055.js";
+import { knock } from "../src040_059/knock055.js";
 
 describe("No. 55 夢想花again", () => {
   test("入力例1: アスタリスクを5回繰り返す", () => {

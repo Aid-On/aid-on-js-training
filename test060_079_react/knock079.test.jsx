@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Knock079 } from "../src060_079_react/Knock079";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock79 React test", () => {
+describe("Knock079 React test", () => {
   it("renders Mandelbrot set visualization with default parameters", () => {
     expect(() => {
       render(<Knock079 />);

@@ -1,9 +1,9 @@
 import React from "react";
 import { render, act } from "@testing-library/react";
 import { Knock073 } from "../src060_079_react/Knock073";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock73 React test", () => {
+describe("Knock073 React test", () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });

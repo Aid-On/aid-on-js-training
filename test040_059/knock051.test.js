@@ -1,4 +1,4 @@
-import { knock } from "../src/knock051.js";
+import { knock } from "../src040_059/knock051.js";
 
 describe("No. 51 お支払い", () => {
   test("入力例: 54321円", () => {
@@ -11,7 +11,7 @@ describe("No. 51 お支払い", () => {
       "50円: 0枚",
       "10円: 2枚",
       "5円: 0枚",
-      "1円: 1枚"
+      "1円: 1枚",
     ];
     expect(knock(54321)).toEqual(expected);
   });
@@ -26,7 +26,7 @@ describe("No. 51 お支払い", () => {
       "50円: 1枚",
       "10円: 1枚",
       "5円: 1枚",
-      "1円: 1枚"
+      "1円: 1枚",
     ];
     expect(knock(16666)).toEqual(expected);
   });
@@ -41,7 +41,7 @@ describe("No. 51 お支払い", () => {
       "50円: 0枚",
       "10円: 2枚",
       "5円: 0枚",
-      "1円: 3枚"
+      "1円: 3枚",
     ];
     expect(knock(123)).toEqual(expected);
   });
@@ -56,7 +56,7 @@ describe("No. 51 お支払い", () => {
       "50円: 1枚",
       "10円: 4枚",
       "5円: 1枚",
-      "1円: 4枚"
+      "1円: 4枚",
     ];
     expect(knock(99999)).toEqual(expected);
   });

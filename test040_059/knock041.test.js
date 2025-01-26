@@ -1,4 +1,4 @@
-import { knock } from "../src/knock041.js";
+import { knock } from "../src040_059/knock041.js";
 
 describe("No. 41 1桁の自然数?", () => {
   test("入力例1: 1桁の自然数 (6)", () => {

@@ -1,4 +1,4 @@
-import { knock } from "../src/knock052.js";
+import { knock } from "../src040_059/knock052.js";
 
 describe("No. 52 閏年", () => {
   test("入力例1: 400で割り切れる年 (2000年)", () => {

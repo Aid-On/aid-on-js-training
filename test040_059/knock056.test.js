@@ -1,4 +1,4 @@
-import { knock } from "../src/knock056.js";
+import { knock } from "../src040_059/knock056.js";
 
 describe("No. 56 2進数変換", () => {
   test("入力例1: 13を2進数に変換", () => {

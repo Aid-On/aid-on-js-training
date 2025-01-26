@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, act } from '@testing-library/react';
-import { Knock069 } from '../src060_079_react/Knock069';
-import { TrainingSkipError } from '../src/common/TrainingSkipError';
+import React from "react";
+import { render, act } from "@testing-library/react";
+import { Knock069 } from "../src060_079_react/Knock069";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe('Knock069 React test', () => {
+describe("Knock069 React test", () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -12,18 +12,18 @@ describe('Knock069 React test', () => {
     jest.useRealTimers();
   });
 
-  it('renders multiple circles with default parameters', () => {
+  it("renders multiple circles with default parameters", () => {
     expect(() => {
       render(<Knock069 />);
     }).not.toThrow(TrainingSkipError);
 
-    const circles = document.querySelectorAll('circle');
+    const circles = document.querySelectorAll("circle");
     expect(circles.length).toBe(10); // Default circleCount
 
     // Store initial positions
-    const initialPositions = Array.from(circles).map(circle => ({
-      x: circle.getAttribute('cx'),
-      y: circle.getAttribute('cy')
+    const initialPositions = Array.from(circles).map((circle) => ({
+      x: circle.getAttribute("cx"),
+      y: circle.getAttribute("cy"),
     }));
 
     // Advance time to test animation
@@ -33,28 +33,30 @@ describe('Knock069 React test', () => {
 
     // Verify positions have changed
     circles.forEach((circle, index) => {
-      expect(circle.getAttribute('cy')).not.toBe(initialPositions[index].y);
+      expect(circle.getAttribute("cy")).not.toBe(initialPositions[index].y);
     });
   });
 
-  it('accepts custom parameters for circle count and animation', () => {
+  it("accepts custom parameters for circle count and animation", () => {
     const customCircleCount = 5;
     const customAmplitude = 30;
     const customIntervalMs = 100;
-    
-    render(<Knock069 
-      circleCount={customCircleCount}
-      amplitude={customAmplitude}
-      intervalMs={customIntervalMs}
-    />);
 
-    const circles = document.querySelectorAll('circle');
+    render(
+      <Knock069
+        circleCount={customCircleCount}
+        amplitude={customAmplitude}
+        intervalMs={customIntervalMs}
+      />
+    );
+
+    const circles = document.querySelectorAll("circle");
     expect(circles.length).toBe(customCircleCount);
 
     // Store initial positions
-    const initialPositions = Array.from(circles).map(circle => ({
-      x: Number(circle.getAttribute('cx')),
-      y: Number(circle.getAttribute('cy'))
+    const initialPositions = Array.from(circles).map((circle) => ({
+      x: Number(circle.getAttribute("cx")),
+      y: Number(circle.getAttribute("cy")),
     }));
 
     // Advance time and check movement
@@ -64,7 +66,7 @@ describe('Knock069 React test', () => {
 
     // Verify positions have changed within amplitude bounds
     circles.forEach((circle, index) => {
-      const newY = Number(circle.getAttribute('cy'));
+      const newY = Number(circle.getAttribute("cy"));
       const deltaY = Math.abs(newY - initialPositions[index].y);
       expect(deltaY).toBeLessThanOrEqual(customAmplitude);
       expect(deltaY).toBeGreaterThan(0); // Ensure movement occurred

@@ -1,4 +1,4 @@
-import { knock } from "../src/knock043.js";
+import { knock } from "../src040_059/knock043.js";
 
 describe("No. 43 2次方程式の解の判別", () => {
   test("入力例1: 2つの実数解 (a=4, b=-7, c=1)", () => {

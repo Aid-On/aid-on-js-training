@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Knock070 } from "../src060_079_react/Knock070";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock70 React test", () => {
+describe("Knock070 React test", () => {
   it("renders a 10x10 grid of alternating colored circles by default", () => {
     expect(() => {
       render(<Knock070 />);

@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useRef } from 'react';
-import './index.css';
+import React, { useState, useCallback, useRef } from "react";
+import "./index.css";
 
 /**
  * マウスの動きに追従する円の軌跡を描画するコンポーネント
@@ -12,38 +12,41 @@ import './index.css';
 export function Knock072({
   maxTrailLength = 10,
   circleRadius = 5,
-  onMouseMove
+  onMouseMove,
 }) {
   const containerRef = useRef(null);
   // Initialize with maxTrailLength positions at center
-  const [positions, setPositions] = useState(() => 
+  const [positions, setPositions] = useState(() =>
     Array(maxTrailLength).fill({ x: 300, y: 200 })
   );
 
-  const handleMouseMove = useCallback((e) => {
-    if (!containerRef.current) return;
-    
-    const rect = containerRef.current.getBoundingClientRect();
-    const newPos = {
-      x: Math.round(e.clientX - rect.left),
-      y: Math.round(e.clientY - rect.top)
-    };
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (!containerRef.current) return;
 
-    // Update positions array by removing oldest position and adding new one
-    setPositions(prev => {
-      const newPositions = [...prev.slice(1), newPos];
-      
-      // Call onMouseMove callback with position and event
-      if (onMouseMove) {
-        onMouseMove({ x: newPos.x, y: newPos.y, event: e });
-      }
-      
-      return newPositions;
-    });
-  }, [maxTrailLength, onMouseMove]);
+      const rect = containerRef.current.getBoundingClientRect();
+      const newPos = {
+        x: Math.round(e.clientX - rect.left),
+        y: Math.round(e.clientY - rect.top),
+      };
+
+      // Update positions array by removing oldest position and adding new one
+      setPositions((prev) => {
+        const newPositions = [...prev.slice(1), newPos];
+
+        // Call onMouseMove callback with position and event
+        if (onMouseMove) {
+          onMouseMove({ x: newPos.x, y: newPos.y, event: e });
+        }
+
+        return newPositions;
+      });
+    },
+    [maxTrailLength, onMouseMove]
+  );
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="w-[600px] h-[400px] border border-gray-300 relative bg-white"
       onMouseMove={handleMouseMove}

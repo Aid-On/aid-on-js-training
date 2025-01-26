@@ -1,4 +1,4 @@
-import { knock } from "../src/knock044.js";
+import { knock } from "../src040_059/knock044.js";
 
 describe("No. 44 通貨換算", () => {
   test("入力例1: 10000円", () => {

@@ -1,4 +1,4 @@
-import { knock } from "../src/knock057.js";
+import { knock } from "../src040_059/knock057.js";
 
 describe("No. 57 テスト集計", () => {
   test("入力例1: 複数の異なる点数", () => {
@@ -7,7 +7,7 @@ describe("No. 57 テスト集計", () => {
       total: 395,
       average: "79.0",
       max: 90,
-      min: 65
+      min: 65,
     });
   });
 
@@ -17,7 +17,7 @@ describe("No. 57 テスト集計", () => {
       total: 300,
       average: "100.0",
       max: 100,
-      min: 100
+      min: 100,
     });
   });
 
@@ -27,7 +27,7 @@ describe("No. 57 テスト集計", () => {
       total: 85,
       average: "85.0",
       max: 85,
-      min: 85
+      min: 85,
     });
   });
 
@@ -37,7 +37,7 @@ describe("No. 57 テスト集計", () => {
       total: 246,
       average: "82.0",
       max: 83,
-      min: 81
+      min: 81,
     });
   });
 
@@ -63,7 +63,7 @@ describe("No. 57 テスト集計", () => {
       total: 150,
       average: "50.0",
       max: 100,
-      min: 0
+      min: 0,
     });
   });
 });

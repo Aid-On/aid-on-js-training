@@ -1,8 +1,10 @@
-import { knock } from "../src/knock048.js";
+import { knock } from "../src040_059/knock048.js";
 
 describe("No. 48 繰り返し計算", () => {
   test("入力例1: 7から始める計算", () => {
-    expect(knock(7)).toBe("7 → 22 → 11 → 34 → 17 → 52 → 26 → 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1");
+    expect(knock(7)).toBe(
+      "7 → 22 → 11 → 34 → 17 → 52 → 26 → 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1"
+    );
   });
 
   test("入力例2: 8から始める計算", () => {

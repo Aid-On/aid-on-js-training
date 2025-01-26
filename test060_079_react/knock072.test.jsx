@@ -1,9 +1,9 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { Knock072 } from "../src060_079_react/Knock072";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock72 React test", () => {
+describe("Knock072 React test", () => {
   it("creates trail effect on mouse movement with default settings", () => {
     expect(() => {
       render(<Knock072 />);
@@ -37,7 +37,7 @@ describe("Knock72 React test", () => {
   });
 
   it("accepts custom maxTrailLength and circleRadius", () => {
-    render(<Knock72 maxTrailLength={5} circleRadius={20} />);
+    render(<Knock072 maxTrailLength={5} circleRadius={20} />);
 
     const container = document.querySelector("div");
 
@@ -60,7 +60,7 @@ describe("Knock72 React test", () => {
 
   it("calls custom onMouseMove handler when provided", () => {
     const onMouseMove = jest.fn();
-    render(<Knock72 onMouseMove={onMouseMove} />);
+    render(<Knock072 onMouseMove={onMouseMove} />);
 
     const container = document.querySelector("div");
 

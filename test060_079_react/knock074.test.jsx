@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Knock074 } from "../src060_079_react/Knock074";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock74 React test", () => {
+describe("Knock074 React test", () => {
   const calculateDistance = (x, y, centerX, centerY) => {
     return Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
   };

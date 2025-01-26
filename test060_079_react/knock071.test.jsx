@@ -1,9 +1,9 @@
 import React, { act } from "react";
 import { render, fireEvent, cleanup, screen } from "@testing-library/react";
 import { Knock071 } from "../src060_079_react/Knock071";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock71 React test", () => {
+describe("Knock071 React test", () => {
   afterEach(cleanup);
   it("adds circles on click up to default maximum limit", () => {
     expect(() => {

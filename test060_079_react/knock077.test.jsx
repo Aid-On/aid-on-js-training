@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Knock077 } from "../src060_079_react/Knock077";
-import { TrainingSkipError } from "../src/common/TrainingSkipError";
+import { TrainingSkipError } from "../src020_039/common/TrainingSkipError";
 
-describe("Knock77 React test", () => {
+describe("Knock077 React test", () => {
   it("renders Sierpinski triangle fractal with default depth", () => {
     expect(() => {
       render(<Knoc077 />);

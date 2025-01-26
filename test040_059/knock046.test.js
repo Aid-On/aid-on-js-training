@@ -1,4 +1,4 @@
-import { knock } from "../src/knock046.js";
+import { knock } from "../src040_059/knock046.js";
 
 describe("No. 46 入場料", () => {
   test("入力例1: 通常料金 (大人2人、子供3人)", () => {

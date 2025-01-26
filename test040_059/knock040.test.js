@@ -1,4 +1,4 @@
-import { knock } from "../src/knock040.js";
+import { knock } from "../src040_059/knock040.js";
 
 describe("No. 40 even or odd", () => {
   test("入力例1: 偶数の判定 (6)", () => {

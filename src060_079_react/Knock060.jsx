@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import './index.css';
+import React, { useState, useCallback } from "react";
+import "./index.css";
 
 /**
  * No. 60 SVGで円を描画
@@ -20,39 +20,33 @@ import './index.css';
  * @param {Function} [props.onMove] - マウス移動時のコールバック関数 (x, y) => void
  * @returns {JSX.Element} 円を描画するSVGコンポーネント
  */
-export function Knock060({
-  cx = 200,
-  cy = 150,
-  onMove,
-  radius = 50
-}) {
+export function Knock060({ cx = 200, cy = 150, onMove, radius = 50 }) {
   const [position, setPosition] = useState({ x: cx, y: cy });
 
-  const handleMouseMove = useCallback((e) => {
-    const svgElement = e.currentTarget;
-    const rect = svgElement.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    if (onMove) {
-      onMove(x, y);
-    }
-    setPosition({ x, y });
-  }, [onMove]);
+  const handleMouseMove = useCallback(
+    (e) => {
+      const svgElement = e.currentTarget;
+      const rect = svgElement.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      if (onMove) {
+        onMove(x, y);
+      }
+      setPosition({ x, y });
+    },
+    [onMove]
+  );
 
   return (
     <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
-      <svg 
-        width="600" 
-        height="400"
-        onMouseMove={handleMouseMove}
-      >
-        <circle 
-          cx={position.x} 
-          cy={position.y} 
+      <svg width="600" height="400" onMouseMove={handleMouseMove}>
+        <circle
+          cx={position.x}
+          cy={position.y}
           r={radius}
-          fill="white" 
-          stroke="black" 
+          fill="white"
+          stroke="black"
           strokeWidth="1"
         />
       </svg>
