@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+import React, { useState, useEffect } from "react";
+import "./index.css";
 
 /**
  * No. 74 螺旋パターンの描画
@@ -23,7 +23,7 @@ import './index.css';
  * @param {number} [centerY=200] 螺旋の中心Y座標
  * @returns {JSX.Element} 螺旋状のパターンを持つSVGコンポーネント
  */
-export function Knock74({
+export function Knock074({
   circleCount = 50,
   angleIncrement = 0.5,
   distanceIncrement = 5,
@@ -40,7 +40,7 @@ export function Knock74({
       const distance = i * distanceIncrement;
       newCircles.push({
         x: centerX + distance * Math.cos(angle),
-        y: centerY + distance * Math.sin(angle)
+        y: centerY + distance * Math.sin(angle),
       });
     }
     setCircles(newCircles);
@@ -50,7 +50,7 @@ export function Knock74({
     <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
       <svg width="600" height="400">
         {circles.map((pos, index) => (
-          <circle 
+          <circle
             key={index}
             cx={pos.x}
             cy={pos.y}

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+import React, { useState, useEffect } from "react";
+import "./index.css";
 
 /**
  * No. 75 アニメーションする円のパターン
@@ -21,10 +21,10 @@ import './index.css';
  * @param {(time: number) => void} [props.onAnimationTick] アニメーションの各更新時に呼び出されるコールバック
  * @returns {JSX.Element} 拡大縮小する円のパターンを持つSVGコンポーネント
  */
-export function Knock75({
+export function Knock075({
   animationInterval = 50,
   circleCount = 6,
-  onAnimationTick
+  onAnimationTick,
 }) {
   const [time, setTime] = useState(0);
   const centerX = 300;
@@ -47,22 +47,24 @@ export function Knock75({
    * @returns {{ x: number, y: number, radius: number }[]} 各円の座標と半径
    */
   const getCircles = () => {
-    return Array(circleCount).fill(null).map((_, index) => {
-      const angle = (2 * Math.PI * index) / circleCount;
-      const distance = 80;
-      const x = centerX + distance * Math.cos(angle);
-      const y = centerY + distance * Math.sin(angle);
-      const scale = 1 + 0.3 * Math.sin(time + index * 0.5);
-      
-      return { x, y, radius: baseRadius * scale };
-    });
+    return Array(circleCount)
+      .fill(null)
+      .map((_, index) => {
+        const angle = (2 * Math.PI * index) / circleCount;
+        const distance = 80;
+        const x = centerX + distance * Math.cos(angle);
+        const y = centerY + distance * Math.sin(angle);
+        const scale = 1 + 0.3 * Math.sin(time + index * 0.5);
+
+        return { x, y, radius: baseRadius * scale };
+      });
   };
 
   return (
     <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
       <svg width="600" height="400">
         {getCircles().map((circle, index) => (
-          <circle 
+          <circle
             key={index}
             cx={circle.x}
             cy={circle.y}

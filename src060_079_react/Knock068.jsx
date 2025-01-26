@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import './index.css';
+import React, { useState, useRef } from "react";
+import "./index.css";
 
 /**
  * No. 68 マウス位置で円の大きさを変化させる
@@ -30,7 +30,7 @@ export function Knock068({
   minRadius = 20,
   maxRadius = 100,
   distanceNorm = 200,
-  onMouseMove
+  onMouseMove,
 }) {
   const [mousePos, setMousePos] = useState({ x: centerX, y: centerY });
   const containerRef = useRef(null);
@@ -39,10 +39,10 @@ export function Knock068({
     // Use clientX/Y directly for test environment compatibility
     const newMousePos = {
       x: e.clientX,
-      y: e.clientY
+      y: e.clientY,
     };
     setMousePos(newMousePos);
-    
+
     if (onMouseMove) {
       onMouseMove(e);
     }
@@ -51,26 +51,28 @@ export function Knock068({
   const getRadius = () => {
     // Calculate Euclidean distance from mouse to center
     const distance = Math.sqrt(
-      Math.pow(mousePos.x - centerX, 2) + 
-      Math.pow(mousePos.y - centerY, 2)
+      Math.pow(mousePos.x - centerX, 2) + Math.pow(mousePos.y - centerY, 2)
     );
-    
+
     // Normalize distance and clamp between 0 and 1
-    const normalizedDistance = Math.min(Math.max(distance / distanceNorm, 0), 1);
-    
+    const normalizedDistance = Math.min(
+      Math.max(distance / distanceNorm, 0),
+      1
+    );
+
     // Linear interpolation between minRadius and maxRadius
     return minRadius + (maxRadius - minRadius) * normalizedDistance;
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="w-[600px] h-[400px] border border-gray-300 relative bg-white"
       onMouseMove={handleMouseMove}
       data-testid="container"
     >
       <svg width="600" height="400">
-        <circle 
+        <circle
           cx={centerX}
           cy={centerY}
           r={getRadius()}

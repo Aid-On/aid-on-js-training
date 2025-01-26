@@ -1,5 +1,5 @@
-import React from 'react';
-import './index.css';
+import React from "react";
+import "./index.css";
 
 /**
  * No.70 市松模様の円グリッドを描画
@@ -18,30 +18,30 @@ import './index.css';
  * @param {number} [spacing=40] 円と円の間隔(px)
  * @returns {JSX.Element} 市松模様状の円を描画したdiv要素
  */
-export function Knock70({
-  gridSize = 10,
-  circleRadius = 15,
-  spacing = 40
-}) {
+export function Knock070({ gridSize = 10, circleRadius = 15, spacing = 40 }) {
   const startX = 100;
   const startY = 50;
 
   return (
     <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
       <svg width="600" height="400">
-        {Array(gridSize).fill(null).map((_, row) =>
-          Array(gridSize).fill(null).map((_, col) => (
-            <circle 
-              key={`${row}-${col}`}
-              cx={startX + col * spacing}
-              cy={startY + row * spacing}
-              r={circleRadius}
-              fill={(row + col) % 2 === 0 ? "white" : "black"}
-              stroke="black"
-              strokeWidth="1"
-            />
-          ))
-        )}
+        {Array(gridSize)
+          .fill(null)
+          .map((_, row) =>
+            Array(gridSize)
+              .fill(null)
+              .map((_, col) => (
+                <circle
+                  key={`${row}-${col}`}
+                  cx={startX + col * spacing}
+                  cy={startY + row * spacing}
+                  r={circleRadius}
+                  fill={(row + col) % 2 === 0 ? "white" : "black"}
+                  stroke="black"
+                  strokeWidth="1"
+                />
+              ))
+          )}
       </svg>
     </div>
   );
