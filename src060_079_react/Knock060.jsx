@@ -20,7 +20,7 @@ import './index.css';
  * @param {Function} [props.onMove] - マウス移動時のコールバック関数 (x, y) => void
  * @returns {JSX.Element} 円を描画するSVGコンポーネント
  */
-export function Knock60({
+export function Knock060({
   cx = 200,
   cy = 150,
   onMove,

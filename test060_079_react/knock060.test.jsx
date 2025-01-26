@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
-import { Knock60 } from '../src060_079_react/Knock60';
+import { Knock060 } from '../src060_079_react/Knock060';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock60 React test', () => {
+describe('Knock060 React test', () => {
   it('renders a circle with default center coordinates', () => {
     expect(() => {
-      render(<Knock60 />);
+      render(<Knock060 />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');
@@ -20,7 +20,7 @@ describe('Knock60 React test', () => {
   });
 
   it('renders a circle with custom center coordinates and radius', () => {
-    render(<Knock60 cx={300} cy={250} radius={30} />);
+    render(<Knock060 cx={300} cy={250} radius={30} />);
     
     const circle = document.querySelector('circle');
     expect(circle).toHaveAttribute('cx', '300');
@@ -30,7 +30,7 @@ describe('Knock60 React test', () => {
 
   it('updates circle position on mouse move and calls onMove callback', () => {
     const onMoveMock = jest.fn();
-    render(<Knock60 onMove={onMoveMock} />);
+    render(<Knock060 onMove={onMoveMock} />);
     
     const svg = document.querySelector('svg');
     

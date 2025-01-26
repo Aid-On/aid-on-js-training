@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { Knock64 } from '../src060_079_react/Knock64';
+import { Knock064 } from '../src060_079_react/Knock064';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock64 React test', () => {
+describe('Knock064 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('Knock64 React test', () => {
 
   it('renders a bouncing circle with default parameters', () => {
     expect(() => {
-      render(<Knock64 />);
+      render(<Knock064 />);
     }).not.toThrow(TrainingSkipError);
 
     const circle = document.querySelector('circle');
@@ -24,7 +24,7 @@ describe('Knock64 React test', () => {
   });
 
   it('accepts custom initial position and speed', () => {
-    render(<Knock64 initialX={100} initialY={150} speed={10} />);
+    render(<Knock064 initialX={100} initialY={150} speed={10} />);
     const circle = document.querySelector('circle');
     
     expect(Number(circle.getAttribute('cx'))).toBe(100);
@@ -42,7 +42,7 @@ describe('Knock64 React test', () => {
     const onBounceLeft = jest.fn();
     const onBounceRight = jest.fn();
     
-    render(<Knock64 
+    render(<Knock064 
       initialX={570} // Start near right edge
       speed={20}
       onBounceLeft={onBounceLeft}

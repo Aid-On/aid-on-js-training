@@ -21,7 +21,7 @@ import './index.css';
  * @param {Function} [onCircleToggle] 円がクリックされた時のハンドラ (row: number, col: number) => void
  * @returns {JSX.Element} クリックで色が変化する円のグリッドを持つSVGコンポーネント
  */
-export function Knock67({
+export function Knock067({
   gridSize = 5,
   circleRadius = 20,
   spacing = 60,

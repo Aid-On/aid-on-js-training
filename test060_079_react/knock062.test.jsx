@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
-import { Knock62 } from '../src060_079_react/Knock62';
+import { Knock062 } from '../src060_079_react/Knock062';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock62 React test', () => {
+describe('Knock062 React test', () => {
   it('renders a movable circle and responds to keyboard input with default behavior', () => {
     expect(() => {
-      render(<Knock62 />);
+      render(<Knock062 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');
@@ -30,7 +30,7 @@ describe('Knock62 React test', () => {
   });
 
   it('accepts custom initial position and move distance', () => {
-    render(<Knock62 initialX={0} moveDistance={20} />);
+    render(<Knock062 initialX={0} moveDistance={20} />);
     
     const container = document.querySelector('div');
     const circle = document.querySelector('circle');
@@ -47,7 +47,7 @@ describe('Knock62 React test', () => {
     const onMoveLeft = jest.fn();
     const onMoveRight = jest.fn();
     
-    render(<Knock62 onMoveLeft={onMoveLeft} onMoveRight={onMoveRight} />);
+    render(<Knock062 onMoveLeft={onMoveLeft} onMoveRight={onMoveRight} />);
     
     const container = document.querySelector('div');
     

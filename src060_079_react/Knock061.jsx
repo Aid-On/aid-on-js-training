@@ -18,7 +18,7 @@ import './index.css';
  * @param {number} [squareY=100] 正方形のY座標
  * @returns {JSX.Element} 正方形と内接円を持つSVGコンポーネント
  */
-export function Knock61({
+export function Knock061({
   squareSize = 200,
   squareX = 200,
   squareY = 100

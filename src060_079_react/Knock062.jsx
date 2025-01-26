@@ -20,7 +20,7 @@ import './index.css';
  * @param {Function} [onMoveRight] 右移動時のカスタムハンドラ
  * @returns {JSX.Element} キー操作で移動可能な円を持つSVGコンポーネント
  */
-export function Knock62({
+export function Knock062({
   initialX = -270,
   onMoveLeft,
   onMoveRight,

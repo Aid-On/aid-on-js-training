@@ -21,7 +21,7 @@ import './index.css';
  * @param {Function} [onBounceRight] 右端での跳ね返り時のカスタムハンドラ
  * @returns {JSX.Element} 跳ね返る円のアニメーションを持つSVGコンポーネント
  */
-export function Knock64({
+export function Knock064({
   initialX = 30,
   initialY = 200,
   speed = 5,

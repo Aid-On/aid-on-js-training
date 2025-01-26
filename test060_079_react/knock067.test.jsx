@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Knock67 } from '../src060_079_react/Knock67';
+import { Knock067 } from '../src060_079_react/Knock067';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock67 React test', () => {
+describe('Knock067 React test', () => {
   it('renders a grid of circles with default props', () => {
     expect(() => {
-      render(<Knock67 />);
+      render(<Knock067 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');
@@ -14,13 +14,13 @@ describe('Knock67 React test', () => {
   });
 
   it('accepts custom grid size', () => {
-    render(<Knock67 gridSize={3} />);
+    render(<Knock067 gridSize={3} />);
     const circles = document.querySelectorAll('circle');
     expect(circles.length).toBe(9); // 3x3 grid
   });
 
   it('toggles circle color on click', () => {
-    render(<Knock67 />);
+    render(<Knock067 />);
     const firstCircle = document.querySelector('circle');
     
     const initialFill = firstCircle.getAttribute('fill');
@@ -35,7 +35,7 @@ describe('Knock67 React test', () => {
 
   it('calls onCircleToggle handler when provided', () => {
     const onCircleToggle = jest.fn();
-    render(<Knock67 gridSize={2} onCircleToggle={onCircleToggle} />);
+    render(<Knock067 gridSize={2} onCircleToggle={onCircleToggle} />);
     
     const circles = document.querySelectorAll('circle');
     
@@ -58,7 +58,7 @@ describe('Knock67 React test', () => {
       startY: 80
     };
     
-    render(<Knock67 gridSize={2} {...customProps} />);
+    render(<Knock067 gridSize={2} {...customProps} />);
     const circles = document.querySelectorAll('circle');
     
     // Check first circle (0,0)

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { Knock63 } from '../src060_079_react/Knock63';
+import { Knock063 } from '../src060_079_react/Knock063';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock63 React test', () => {
+describe('Knock063 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('Knock63 React test', () => {
 
   it('renders a circle moving in a circular path with default parameters', () => {
     expect(() => {
-      render(<Knock63 />);
+      render(<Knock063 />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');
@@ -53,7 +53,7 @@ describe('Knock63 React test', () => {
       centerY: 150
     };
     
-    render(<Knock63 {...customProps} />);
+    render(<Knock063 {...customProps} />);
     
     const orbitPath = document.querySelector('[data-testid="orbit-path"]');
     const movingCircle = document.querySelector('[data-testid="moving-circle"]');

@@ -1,7 +1,7 @@
-// myCustomReporter.js (ESM)
-import chalk from "chalk";
+// myCustomReporter.js
+const chalk = require("chalk");
 
-export default class MyCustomReporter {
+class MyCustomReporter {
   constructor(globalConfig, options) {
     console.log("テスト開始");
     this.trainingSkipCount = 0;
@@ -51,3 +51,5 @@ export default class MyCustomReporter {
     console.log(`\nTrainingSkipError: ${this.trainingSkipCount}回`);
   }
 }
+
+module.exports = MyCustomReporter;

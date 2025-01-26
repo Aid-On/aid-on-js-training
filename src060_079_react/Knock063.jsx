@@ -22,7 +22,7 @@ import './index.css';
  * @param {number} [centerY=200] 中心のY座標
  * @returns {JSX.Element} 円軌道上を移動する円のアニメーションを持つSVGコンポーネント
  */
-export function Knock63({
+export function Knock063({
   angleIncrement = 2,
   interval = 50,
   orbitRadius = 100,

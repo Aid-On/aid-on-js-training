@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent, screen, act } from '@testing-library/react';
-import { Knock66 } from '../src060_079_react/Knock66';
+import { Knock066 } from '../src060_079_react/Knock066';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock66 React test', () => {
+describe('Knock066 React test', () => {
   it('renders with default props and follows mouse movement', () => {
     expect(() => {
-      render(<Knock66 />);
+      render(<Knock066 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = screen.getByTestId('container');
@@ -32,7 +32,7 @@ describe('Knock66 React test', () => {
   });
 
   it('accepts custom initial position and radius', () => {
-    render(<Knock66 initialX={100} initialY={200} radius={20} />);
+    render(<Knock066 initialX={100} initialY={200} radius={20} />);
     const circle = screen.getByTestId('circle');
     
     expect(Number(circle.getAttribute('cx'))).toBe(100);
@@ -41,7 +41,7 @@ describe('Knock66 React test', () => {
   });
 
   it('accepts custom window dimensions', () => {
-    render(<Knock66 width={800} height={600} />);
+    render(<Knock066 width={800} height={600} />);
     const container = screen.getByTestId('container');
     const svg = screen.getByTestId('svg-container');
     
@@ -53,7 +53,7 @@ describe('Knock66 React test', () => {
 
   it('keeps circle within bounds', () => {
     const radius = 30;
-    render(<Knock66 radius={radius} width={400} height={300} />);
+    render(<Knock066 radius={radius} width={400} height={300} />);
     const container = screen.getByTestId('container');
     const circle = screen.getByTestId('circle');
 
@@ -84,7 +84,7 @@ describe('Knock66 React test', () => {
 
   it('calls onMove handler when position changes', () => {
     const onMove = jest.fn();
-    render(<Knock66 onMove={onMove} />);
+    render(<Knock066 onMove={onMove} />);
     const container = screen.getByTestId('container');
 
     act(() => {

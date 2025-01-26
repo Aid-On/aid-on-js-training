@@ -24,7 +24,7 @@ import './index.css';
  * @param {Function} [onMouseMove] マウス移動時のカスタムハンドラ
  * @returns {JSX.Element} マウス位置に応じてサイズが変化する円を持つSVGコンポーネント
  */
-export function Knock68({
+export function Knock068({
   centerX = 300,
   centerY = 200,
   minRadius = 20,
