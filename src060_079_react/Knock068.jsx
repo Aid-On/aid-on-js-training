@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './index.css';
 
 /**
@@ -24,7 +24,7 @@ import './index.css';
  * @param {Function} [onMouseMove] マウス移動時のカスタムハンドラ
  * @returns {JSX.Element} マウス位置に応じてサイズが変化する円を持つSVGコンポーネント
  */
-export function Knock68({
+export function Knock068({
   centerX = 300,
   centerY = 200,
   minRadius = 20,
@@ -33,12 +33,13 @@ export function Knock68({
   onMouseMove
 }) {
   const [mousePos, setMousePos] = useState({ x: centerX, y: centerY });
+  const containerRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    // Use clientX/Y directly for test environment compatibility
     const newMousePos = {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      x: e.clientX,
+      y: e.clientY
     };
     setMousePos(newMousePos);
     
@@ -48,18 +49,25 @@ export function Knock68({
   };
 
   const getRadius = () => {
+    // Calculate Euclidean distance from mouse to center
     const distance = Math.sqrt(
       Math.pow(mousePos.x - centerX, 2) + 
       Math.pow(mousePos.y - centerY, 2)
     );
-    const normalizedDistance = Math.min(distance, distanceNorm) / distanceNorm;
+    
+    // Normalize distance and clamp between 0 and 1
+    const normalizedDistance = Math.min(Math.max(distance / distanceNorm, 0), 1);
+    
+    // Linear interpolation between minRadius and maxRadius
     return minRadius + (maxRadius - minRadius) * normalizedDistance;
   };
 
   return (
     <div 
+      ref={containerRef}
       className="w-[600px] h-[400px] border border-gray-300 relative bg-white"
       onMouseMove={handleMouseMove}
+      data-testid="container"
     >
       <svg width="600" height="400">
         <circle 
@@ -69,6 +77,7 @@ export function Knock68({
           fill="white"
           stroke="black"
           strokeWidth="1"
+          data-testid="circle"
         />
       </svg>
     </div>

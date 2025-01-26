@@ -25,7 +25,7 @@ import './index.css';
  * @param {Function} [onCollideY] y方向の壁との衝突時のカスタムハンドラ
  * @returns {JSX.Element} 跳ね返る円のアニメーションを持つSVGコンポーネント
  */
-export function Knock65({
+export function Knock065({
   initialX = 30,
   initialY = 30,
   velocityX = 5,

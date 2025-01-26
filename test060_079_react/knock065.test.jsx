@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { Knock65 } from '../src060_079_react/Knock65';
+import { Knock065 } from '../src060_079_react/Knock065';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock65 React test', () => {
+describe('Knock065 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('Knock65 React test', () => {
 
   it('renders a diagonally bouncing circle with default parameters', () => {
     expect(() => {
-      render(<Knock65 />);
+      render(<Knock065 />);
     }).not.toThrow(TrainingSkipError);
 
     const circle = document.querySelector('circle');
@@ -34,7 +34,7 @@ describe('Knock65 React test', () => {
   });
 
   it('accepts custom initial position and velocity', () => {
-    render(<Knock65 initialX={100} initialY={200} velocityX={10} velocityY={15} />);
+    render(<Knock065 initialX={100} initialY={200} velocityX={10} velocityY={15} />);
     const circle = document.querySelector('circle');
     
     // Check custom initial position
@@ -55,7 +55,7 @@ describe('Knock65 React test', () => {
     const onCollideY = jest.fn();
     
     // Start near right boundary to trigger X collision
-    render(<Knock65 
+    render(<Knock065 
       initialX={560} 
       initialY={200} 
       velocityX={50} 
@@ -74,7 +74,7 @@ describe('Knock65 React test', () => {
 
     // Reset mocks and rerender near bottom boundary
     jest.clearAllMocks();
-    render(<Knock65 
+    render(<Knock065 
       initialX={200} 
       initialY={360} 
       velocityX={5} 
@@ -92,7 +92,7 @@ describe('Knock65 React test', () => {
   });
 
   it('stays within window bounds', () => {
-    render(<Knock65 />);
+    render(<Knock065 />);
     const circle = document.querySelector('circle');
     
     // Run animation for a while

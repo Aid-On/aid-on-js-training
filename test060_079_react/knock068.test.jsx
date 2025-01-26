@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Knock68 } from '../src060_079_react/Knock68';
+import { Knock068 } from '../src060_079_react/Knock068';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock68 React test', () => {
+describe('Knock068 React test', () => {
   it('renders a circle that changes size based on mouse distance with default behavior', () => {
     expect(() => {
-      render(<Knock68 />);
+      render(<Knock068 />);
     }).not.toThrow(TrainingSkipError);
 
     const container = document.querySelector('div');
@@ -40,7 +40,7 @@ describe('Knock68 React test', () => {
   });
 
   it('accepts custom center position and radius values', () => {
-    render(<Knock68 
+    render(<Knock068 
       centerX={150} 
       centerY={100} 
       minRadius={10} 
@@ -61,7 +61,7 @@ describe('Knock68 React test', () => {
   it('calls custom movement handler when provided', () => {
     const onMouseMove = jest.fn();
     
-    render(<Knock68 onMouseMove={onMouseMove} />);
+    render(<Knock068 onMouseMove={onMouseMove} />);
     
     const container = document.querySelector('div');
     

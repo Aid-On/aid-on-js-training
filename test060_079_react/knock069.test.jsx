@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import { Knock69 } from '../src060_079_react/Knock69';
+import { Knock069 } from '../src060_079_react/Knock069';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock69 React test', () => {
+describe('Knock069 React test', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -14,7 +14,7 @@ describe('Knock69 React test', () => {
 
   it('renders multiple circles with default parameters', () => {
     expect(() => {
-      render(<Knock69 />);
+      render(<Knock069 />);
     }).not.toThrow(TrainingSkipError);
 
     const circles = document.querySelectorAll('circle');
@@ -42,7 +42,7 @@ describe('Knock69 React test', () => {
     const customAmplitude = 30;
     const customIntervalMs = 100;
     
-    render(<Knock69 
+    render(<Knock069 
       circleCount={customCircleCount}
       amplitude={customAmplitude}
       intervalMs={customIntervalMs}

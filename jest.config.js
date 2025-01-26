@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   reporters: [
     // 'default',
     './myCustomReporter.js',

@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Knock61 } from '../src060_079_react/Knock61';
+import { Knock061 } from '../src060_079_react/Knock061';
 import { TrainingSkipError } from '../src/common/TrainingSkipError';
 
-describe('Knock61 React test', () => {
+describe('Knock061 React test', () => {
   it('renders a square with inscribed circle using default values', () => {
     expect(() => {
-      render(<Knock61 />);
+      render(<Knock061 />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');
@@ -28,7 +28,7 @@ describe('Knock61 React test', () => {
 
   it('accepts custom square size and position', () => {
     expect(() => {
-      render(<Knock61 squareSize={300} squareX={100} squareY={50} />);
+      render(<Knock061 squareSize={300} squareX={100} squareY={50} />);
     }).not.toThrow(TrainingSkipError);
 
     const svg = document.querySelector('svg');

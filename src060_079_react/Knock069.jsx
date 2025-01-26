@@ -22,7 +22,7 @@ import './index.css';
  * @param {number} [intervalMs=50] アニメーション更新間隔(ms)
  * @returns {JSX.Element} 波状に動く円のアニメーションを持つSVGコンポーネント
  */
-export function Knock69({
+export function Knock069({
   circleCount = 10,
   amplitude = 50,
   frequency = 0.1,

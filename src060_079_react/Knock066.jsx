@@ -24,7 +24,7 @@ import './index.css';
  * @param {Function} [props.onMove] - マウス移動時のコールバック関数 ({x: number, y: number}) => void
  * @returns {JSX.Element} マウスに追従する円を持つSVGコンポーネント
  */
-export function Knock66({
+export function Knock066({
   initialX = 180,
   initialY = 150,
   radius = 30,
