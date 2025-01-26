@@ -64,6 +64,7 @@ export function Knock066({
     <div 
       data-testid="container"
       style={containerStyle}
+      className="flex justify-center items-center"
       onMouseMove={handleMouseMove}
     >
       <svg 

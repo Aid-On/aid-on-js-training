@@ -56,7 +56,7 @@ export function Knock076({ createPoint, onPointAdded }) {
   }, [points]);
 
   return (
-    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white flex justify-center items-center">
       <div className="absolute top-2 left-2 text-sm">
         π ≈ {piEstimate.toFixed(4)}
       </div>

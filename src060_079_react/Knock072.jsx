@@ -48,7 +48,7 @@ export function Knock072({
   return (
     <div
       ref={containerRef}
-      className="w-[600px] h-[400px] border border-gray-300 relative bg-white"
+      className="w-[600px] h-[400px] border border-gray-300 relative bg-white flex justify-center items-center"
       onMouseMove={handleMouseMove}
       data-testid="container"
     >

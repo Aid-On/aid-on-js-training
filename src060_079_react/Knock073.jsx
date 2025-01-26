@@ -60,7 +60,7 @@ export function Knock073({
 
   return (
     <div
-      className={`w-[${width}px] h-[${height}px] border border-gray-300 relative bg-white`}
+      className={`w-[${width}px] h-[${height}px] border border-gray-300 relative bg-white flex justify-center items-center`}
     >
       <svg width={width} height={height}>
         {circles.map((circle, index) => (

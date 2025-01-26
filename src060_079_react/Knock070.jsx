@@ -23,7 +23,7 @@ export function Knock070({ gridSize = 10, circleRadius = 15, spacing = 40 }) {
   const startY = 50;
 
   return (
-    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white flex justify-center items-center">
       <svg width="600" height="400">
         {Array(gridSize)
           .fill(null)

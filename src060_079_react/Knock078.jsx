@@ -57,7 +57,7 @@ export function Knock078({
   }, [initialDepth, initialLength, branchRatio, onBranchesGenerated]);
 
   return (
-    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white">
+    <div className="w-[600px] h-[400px] border border-gray-300 relative bg-white flex justify-center items-center">
       <svg width="600" height="400" data-testid="container">
         {branches.map((branch, index) => (
           <line

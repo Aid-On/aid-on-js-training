@@ -64,7 +64,7 @@ export function Knock079({
 
   return (
     <div
-      className={`w-[${width}px] h-[${height}px] border border-gray-300 relative bg-white`}
+      className={`w-[${width}px] h-[${height}px] border border-gray-300 relative bg-white flex justify-center items-center`}
     >
       <svg width={width} height={height}>
         <rect width={width} height={height} fill="black" />
