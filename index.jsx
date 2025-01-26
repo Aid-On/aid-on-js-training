@@ -10,6 +10,9 @@ import { Knock066 } from './src060_079_react/Knock066.jsx';
 import { Knock067 } from './src060_079_react/Knock067.jsx';
 import { Knock068 } from './src060_079_react/Knock068.jsx';
 import { Knock069 } from './src060_079_react/Knock069.jsx';
+import { Knock072 } from './src060_079_react/Knock072.jsx';
+import { Knock077 } from './src060_079_react/Knock077.jsx';
+import { Knock078 } from './src060_079_react/Knock078.jsx';
 
 const App = () => {
   return (
@@ -55,6 +58,18 @@ const App = () => {
         <div>
           <h2 className="text-xl mb-2">Knock069</h2>
           <Knock069 />
+        </div>
+        <div>
+          <h2 className="text-xl mb-2">Knock072</h2>
+          <Knock072 />
+        </div>
+        <div>
+          <h2 className="text-xl mb-2">Knock077</h2>
+          <Knock077 />
+        </div>
+        <div>
+          <h2 className="text-xl mb-2">Knock078</h2>
+          <Knock078 />
         </div>
       </div>
     </div>
