@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 08 正の整数?
 // 整数値を入力させ、値が正であれば "positive" と表示するプログラムを作成せよ。

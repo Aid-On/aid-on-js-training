@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 02 余り
 // 12345 を 7 で割った結果（剰余）を返すプログラムを作成せよ。

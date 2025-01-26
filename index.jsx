@@ -24,8 +24,8 @@ import { Knock079 } from "./src060_079_react/Knock079.jsx";
 const App = () => {
   return (
     <div className="p-4 w-screen h-screen flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold mb-4">Aid-On JS Training Dev</h1>
       <div className="space-y-4 w-full max-w-4xl">
+        <h1 className="text-2xl font-bold mb-4">Aid-On JS Training Dev</h1>
         <div>
           <h2 className="text-xl mb-2">Knock060</h2>
           <Knock060 />

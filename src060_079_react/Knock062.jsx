@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import './index.css';
+import React, { useState, useCallback, useEffect } from "react";
+import "./index.css";
 
 /**
  * No. 62 矢印キーで円を左右に移動
@@ -24,45 +24,48 @@ export function Knock062({
   initialX = -270,
   onMoveLeft,
   onMoveRight,
-  moveDistance = 10
+  moveDistance = 10,
 }) {
   const [circleX, setCircleX] = useState(initialX);
   const circleY = 200;
   const radius = 30;
 
-  const handleKeyDown = useCallback((e) => {
-    e.preventDefault(); // Prevent default scroll behavior
-    if (e.key === 'ArrowLeft') {
-      if (onMoveLeft) {
-        onMoveLeft();
+  const handleKeyDown = useCallback(
+    (e) => {
+      e.preventDefault(); // Prevent default scroll behavior
+      if (e.key === "ArrowLeft") {
+        if (onMoveLeft) {
+          onMoveLeft();
+        }
+        setCircleX((x) => x - moveDistance);
+      } else if (e.key === "ArrowRight") {
+        if (onMoveRight) {
+          onMoveRight();
+        }
+        setCircleX((x) => x + moveDistance);
       }
-      setCircleX(x => x - moveDistance);
-    } else if (e.key === 'ArrowRight') {
-      if (onMoveRight) {
-        onMoveRight();
-      }
-      setCircleX(x => x + moveDistance);
-    }
-  }, [moveDistance, onMoveLeft, onMoveRight]);
+    },
+    [moveDistance, onMoveLeft, onMoveRight]
+  );
 
   useEffect(() => {
     // Add event listener to document to ensure it catches all keyboard events
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleKeyDown]);
 
   return (
-    <div 
-      className="w-[600px] h-[400px] border border-gray-300 relative bg-white focus:outline-none flex justify-center items-center" 
+    <div
+      className="w-[600px] h-[400px] border border-gray-300 relative bg-white focus:outline-none flex justify-center items-center"
       tabIndex={0}
       onKeyDown={handleKeyDown}
     >
       <svg width="600" height="400">
-        <circle 
-          cx={circleX} 
-          cy={circleY} 
+        <circle
+          cx={circleX}
+          cy={circleY}
           r={radius}
           fill="white"
           stroke="black"

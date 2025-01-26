@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 14 カウントダウン
 // 整数値を入力させ、入力値から 0 まで数を 1 ずつ減らして表示するプログラムを作成せよ。

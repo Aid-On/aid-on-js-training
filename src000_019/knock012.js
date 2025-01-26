@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 12 ごあいさつ指定回
 // 整数値を入力させ、その値の回数だけ Hello World! を繰り返して表示するプログラムを作成せよ。

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 16 0でおしまい
 // 整数値を入力させ、入力値が0でなければ再度入力させ、0であれば終了するプログラムを作成せよ。

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 04 入力と計算
 // 整数値を入力させ、その入力値を3倍した計算結果を表示するプログラムを作成せよ。

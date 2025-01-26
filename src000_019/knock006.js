@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 06 0?
 // 整数値を入力させ、値が 0 なら "zero" と表示するプログラムを作成せよ。

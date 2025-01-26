@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 10 絶対値
 // 整数値を入力させ、その値を絶対値にして表示するプログラムを作成せよ。

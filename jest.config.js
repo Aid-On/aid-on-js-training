@@ -1,11 +1,11 @@
 module.exports = {
   reporters: [
-    // 'default',
-    './myCustomReporter.js',
+    // "default",
+    "./myCustomReporter.js",
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom']
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };

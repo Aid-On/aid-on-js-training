@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 05 入力と四則演算
 // 整数値を2つ入力させ、それらの値の和、差、積、商と余りを求めるプログラムを作成せよ。

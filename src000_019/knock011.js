@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 11 ごあいさつ10回
 // Hello World! を10回繰り返して表示するプログラムを作成せよ。

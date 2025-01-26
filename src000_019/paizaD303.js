@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 // No. 19 1日の降水量計算
 // 1時間あたりの降水量 n を受け取り、24時間での降水量を計算するプログラムを作成せよ。
 // 実行例:

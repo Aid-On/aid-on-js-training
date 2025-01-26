@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
+import { TrainingSkipError } from "../common/TrainingSkipError.js";
 
 // No. 13 カウントアップ
 // 整数値を入力させ、0 から入力値まで数を 1 ずつ増やして表示するプログラムを作成せよ。
