@@ -1,4 +1,4 @@
-import { knock } from "../src/knock025.js";
+import { knock } from "../src020_039/knock025.js";
 
 describe("No. 25 -10未満?、-10以上0未満?、0以上?", () => {
   test("入力が-15の場合: number = -15", () => {

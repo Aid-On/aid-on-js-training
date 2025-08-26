@@ -1,4 +1,4 @@
-import { knock } from "../src/knock037.js";
+import { knock } from "../src020_039/knock037.js";
 
 describe("No. 37 続々・配列要素の参照", () => {
   test("入力が8の場合: index = 8", () => {

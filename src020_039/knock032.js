@@ -21,7 +21,7 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = () => {
   const result = [];
-  for (var x = 1; x < 20; x++) {
+  for (let x = 1; x <= 20; x++) {
     if (x % 5 === 0) {
       result.push("bar");
     } else {

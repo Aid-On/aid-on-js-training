@@ -1,4 +1,4 @@
-import { knock } from "../src/knock022.js";
+import { knock } from "../src020_039/knock022.js";
 
 describe("No. 22", () => {
   test("入力が10の場合: number = 10", () => {

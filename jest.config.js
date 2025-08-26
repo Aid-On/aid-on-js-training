@@ -1,7 +1,6 @@
 module.exports = {
   reporters: [
-    "default",
-    // "./myCustomReporter.js",
+    "./myCustomReporter.js",
   ],
   testEnvironment: "jsdom",
   moduleNameMapper: {

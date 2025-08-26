@@ -1,4 +1,4 @@
-import { knock } from "../src/knock026.js";
+import { knock } from "../src020_039/knock026.js";
 
 describe("No. 26 switch-case", () => {
   test("入力が1の場合: number = 1", () => {

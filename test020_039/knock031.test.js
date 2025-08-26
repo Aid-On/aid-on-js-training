@@ -1,4 +1,4 @@
-import { knock } from "../src/knock031.js";
+import { knock } from "../src020_039/knock031.js";
 
 describe("No. 31 棒グラフ改", () => {
   test("入力が7の場合: n = 7", () => {

@@ -1,4 +1,4 @@
-import { knock } from "../src/knock028.js";
+import { knock } from "../src020_039/knock028.js";
 
 describe("No. 28 nの階乗", () => {
   test("入力が10の場合: n = 10", () => {

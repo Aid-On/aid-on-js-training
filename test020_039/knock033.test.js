@@ -1,4 +1,4 @@
-import { knock } from "../src/knock033.js";
+import { knock } from "../src020_039/knock033.js";
 
 describe("No. 33 入力値抜き", () => {
   test("入力が7の場合: exclude = 7", () => {

@@ -1,4 +1,4 @@
-import { knock } from "../src/knock023.js";
+import { knock } from "../src020_039/knock023.js";
 
 describe("No. 23 -5以上10未満", () => {
   test("入力が0の場合: number = 0", () => {

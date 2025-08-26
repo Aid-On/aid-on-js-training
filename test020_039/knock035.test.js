@@ -1,4 +1,4 @@
-import { knock } from "../src/knock035.js";
+import { knock } from "../src020_039/knock035.js";
 
 describe("No. 35 配列要素の参照", () => {
   test("入力が0の場合: index = 0", () => {

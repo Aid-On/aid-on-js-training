@@ -1,4 +1,4 @@
-import { knock } from "../src/knock027.js";
+import { knock } from "../src020_039/knock027.js";
 
 describe("No. 27 1からnまでの和", () => {
   test("入力が10の場合: n = 10", () => {

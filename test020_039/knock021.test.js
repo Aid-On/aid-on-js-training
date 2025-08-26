@@ -1,4 +1,4 @@
-import { knock } from "../src/knock021.js";
+import { knock } from "../src020_039/knock021.js";
 
 describe("No. 21", () => {
   test("入力例1: str = 'abc', count = 3", () => {

@@ -24,9 +24,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (value1 = 10, value2 = 3) => {
   if (value2 === 0) {
-    throw new Error("2つ目の値が0です。0で割ることはできません。");
+    throw new Error("2つ目の値が0のため、割り算はできません");
   }
-  const divide = Math.floor(value1 / value2);
+  const divide = Math.trunc(value1 / value2);
   const multiply = divide * value2;
   return [divide, multiply];
 };

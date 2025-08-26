@@ -1,4 +1,4 @@
-import { knock } from "../src/knock036.js";
+import { knock } from "../src020_039/knock036.js";
 
 describe("No. 36 続・配列要素の参照", () => {
   test("入力が index1 = 3, index2 = 6 の場合", () => {

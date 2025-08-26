@@ -1,4 +1,4 @@
-import { knock } from "../src/knock039.js";
+import { knock } from "../src020_039/knock039.js";
 
 describe("No. 39 もっと・配列要素の参照", () => {
   test("隣接する要素の引き算が正しい", () => {

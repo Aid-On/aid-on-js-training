@@ -29,7 +29,7 @@ export const knock = (n = 5) => {
     return 1;
   }
   let result = 1;
-  for (var x = 1; x <= n; x++) {
+  for (let i = 1; i <= n; i++) {
     result *= i;
   }
 

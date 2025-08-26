@@ -34,11 +34,11 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  */
 export const knock = (exclude) => {
   const result = [];
-  for (var x = 1; x < 9; x++) {
+  for (let i = 1; i <= 9; i++) {
     if (i === exclude) {
       continue;
     }
-    result.push(x);
+    result.push(i);
   }
   return result;
 };
