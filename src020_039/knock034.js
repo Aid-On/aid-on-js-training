@@ -25,5 +25,15 @@
  * @returns {Array<number>} - 入力値と入力値+1を除いた1から9までの数字
  */
 export const knock = (exclude) => {
-  throw new TrainingSkipError("未実装");
+  const result = [];
+  for (var x = 1; x < 9; x++) {
+    if (x === exclude) {
+      continue;
+    }
+    if (x === exclude + 1 && exclude + 1 <= 9) {
+      continue;
+    }
+    result.push(x);
+  }
+  return result;
 };

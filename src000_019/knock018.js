@@ -23,7 +23,7 @@
  */
 export const knock = (num = 6) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  return Array(10).fill(num);
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

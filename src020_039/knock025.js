@@ -25,5 +25,11 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 範囲に応じた文字列 "range 1", "range 2", または "range 3"
  */
 export const knock = (number) => {
-  throw new TrainingSkipError("未実装");
+  if (number < -10) {
+    return "range 1";
+  } else if (number >= -10 && number < 0) {
+    return "range 2";
+  } else if (number >= 0) {
+    return "range 3";
+  }
 };

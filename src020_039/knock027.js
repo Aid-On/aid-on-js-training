@@ -24,5 +24,13 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {number} - 1からnまでの総和。nが0以下の場合は0。
  */
 export const knock = (n) => {
-  throw new TrainingSkipError("未実装");
+  if (n <= 0) {
+    return 0;
+  }
+  var result = 0;
+  for (var x = 1; x <= n; x++) {
+    result += x;
+  }
+
+  return result;
 };

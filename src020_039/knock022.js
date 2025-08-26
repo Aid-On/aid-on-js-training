@@ -19,5 +19,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 条件に一致する場合 "OK" を返す、一致しない場合は空文字列
  */
 export const knock = (number) => {
-  throw new TrainingSkipError("未実装");
+  if (number <= -10 || number >= 10) {
+    return "OK";
+  } else {
+    return "";
+  }
 };

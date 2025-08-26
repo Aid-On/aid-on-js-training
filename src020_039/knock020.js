@@ -23,5 +23,10 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - [割り算の結果, 掛け算の結果]
  */
 export const knock = (value1 = 10, value2 = 3) => {
-  throw new TrainingSkipError("未実装");
+  if (value2 === 0) {
+    throw new Error("2つ目の値が0です。0で割ることはできません。");
+  }
+  const divide = Math.floor(value1 / value2);
+  const multiply = divide * value2;
+  return [divide, multiply];
 };

@@ -19,7 +19,13 @@ import { TrainingSkipError } from "../common/TrainingSkipError.js";
 // @returns {string} "input number: num\nabsolute value is absValue"
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return TrainingSkipError("未実装");
+  var absValue = 0;
+  if (num < 0) {
+    absValue = num * -1;
+  } else {
+    absValue = num;
+  }
+  return `input number: ${num}\nabsolute value is ${absValue}`;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 // 22から26は関数で分けてもいいかもね

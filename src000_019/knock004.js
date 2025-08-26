@@ -17,6 +17,6 @@ import { TrainingSkipError } from "../common/TrainingSkipError.js";
 export const knock = (num = 123) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
   const result = num * 3;
-  return TrainingSkipError("未実装");
+  return `input number: ${num}\nanswer = ${result}`;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
