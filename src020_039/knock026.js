@@ -41,15 +41,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 条件に応じた文字列 ("one", "two", "three", または "others")
  */
 export const knock = (number) => {
-  switch (number) {
-    case 1:
-      return "one";
-    case 2:
-      return "two";
-
-    case 3:
-      return "three";
-    default:
-      return "others";
-  }
+  throw TrainingSkipError;
 };

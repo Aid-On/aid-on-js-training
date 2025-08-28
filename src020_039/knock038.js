@@ -27,16 +27,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - 表示する値の配列
  */
 export const knock = () => {
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  const result = [];
-
-  const v = 0;
-
-  for (var x = 0; x < 10; x++) {
-    const value = array[v];
-    result.push(value);
-    v = value;
-  }
-  return result;
+  throw TrainingSkipError;
 };

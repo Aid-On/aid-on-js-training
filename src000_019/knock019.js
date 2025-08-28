@@ -26,12 +26,7 @@
  */
 export const knock = (inputs = [4, 6, 7, 3, 1]) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const arr = new Array(5);
-
-  for (var x = 0; x < arr.length; x++) {
-    arr[x] = inputs[x] * 2;
-  }
-  return arr;
+  throw TrainingSkipError;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
 

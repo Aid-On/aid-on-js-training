@@ -26,19 +26,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 棒グラフ（`*`をn個並べた文字列）。5個ごとにスペースを挿入。
  */
 export const knock = (n = 7) => {
-  if (n <= 0) {
-    return "";
-  }
-
-  var result = "";
-
-  for (var x = 1; x <= n; x++) {
-    result += "*";
-
-    if (x % 5 === 0 && x < n) {
-      result += " ";
-    }
-  }
-
-  return result;
+  throw TrainingSkipError;
 };

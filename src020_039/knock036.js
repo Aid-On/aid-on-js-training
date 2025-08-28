@@ -23,12 +23,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 配列要素の積を計算した結果を文字列で返す
  */
 export const knock = (index1, index2) => {
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  const value1 = array[index1];
-  const value2 = array[index2];
-
-  const result = value1 * value2;
-
-  return `${value1} * ${value2} = ${result}`;
+  throw TrainingSkipError;
 };

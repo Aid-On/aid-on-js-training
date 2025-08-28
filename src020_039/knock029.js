@@ -34,13 +34,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 入力が5つでない場合にエラーをスロー
  */
 export const knock = (numbers = [11, 22, 33, 44, 55]) => {
-  if (numbers.length !== 5) {
-    throw new Error("入力値は5つの整数である必要があります");
-  }
-  var result = 0;
-  for (var x = 0; x < numbers.length; x++) {
-    result += numbers[x];
-  }
-
-  return result;
+  throw TrainingSkipError;
 };

@@ -23,11 +23,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 最終的に取得した値を文字列で返す
  */
 export const knock = (index) => {
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-
-  const value = array[index];
-
-  const value2 = array[value];
-
-  return `result = ${value2}`;
+  throw TrainingSkipError;
 };

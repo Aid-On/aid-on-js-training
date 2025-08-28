@@ -16,6 +16,6 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
 // @returns {string} "input number: num\nyour number is num"
 export const knock = (num = 123) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  return `input number: ${num}\nyour number is ${num}`;
+  throw TrainingSkipError;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

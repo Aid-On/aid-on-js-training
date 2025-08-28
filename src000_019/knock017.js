@@ -19,13 +19,6 @@
  */
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const arr = new Array(10);
-
-  for (var x = 0; x < 10; x++) {
-    arr[x] = x;
-  }
-
-  // 配列を返す
-  return arr;
+  throw TrainingSkipError;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };

@@ -20,13 +20,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number|string>} - 数字と "bar" を含む配列
  */
 export const knock = () => {
-  const result = [];
-  for (let x = 1; x <= 20; x++) {
-    if (x % 5 === 0) {
-      result.push("bar");
-    } else {
-      result.push(x);
-    }
-  }
-  return result;
+  throw TrainingSkipError;
 };

@@ -30,7 +30,5 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 配列の要素を示す文字列
  */
 export const knock = (index) => {
-  const array = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
-  const value = array[index];
-  return `array[${index}] = ${value}`;
+  throw TrainingSkipError;
 };
