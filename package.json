@@ -2,7 +2,6 @@
   "name": "aid-on-js-training",
   "version": "1.0.0",
   "description": "JavaScript programming exercises",
-  "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "build": "npx babel src000_019 src020_039 src040_059 src060_079_react --out-dir dist",
@@ -41,5 +40,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "postcss-selector-parser@6.1.4": "^7.1.6"
   }
 }
